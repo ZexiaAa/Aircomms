@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/group1"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/drawerExtras"
+            android:title="Extras"
+            android:icon="@drawable/menu_extra"
+            android:iconTint="@color/black"/>
+
+
+        <item
+            android:id="@+id/drawerBookmarks"
+            android:title="Bookmarks"
+            android:icon="@drawable/menu_bookmark"
+            android:iconTint="@color/black"/>
+
+        <item
+            android:id="@+id/drawerHistory"
+            android:title="History"
+            android:icon="@drawable/menu_history"
+            android:iconTint="@color/black"/>
+
+    </group>
+    <item
+        android:title="More"
+        android:id="@+id/menu_search_option">
+    <menu>
+
+    <group
+        android:id="@+id/group2"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/drawerSettings"
+            android:title="Settings"
+            android:icon="@drawable/menu_settings"
+            android:iconTint="@color/black"/>
+        <item
+            android:id="@+id/drawerRateApp"
+            android:title="Rate App"
+            android:icon="@drawable/menu_rate"
+            android:iconTint="@color/black"/>
+        <item
+            android:id="@+id/shareApp"
+            android:title="Share App"
+            android:icon="@drawable/menu_share"
+            android:iconTint="@color/black"/>
+
+    </group>
+    </menu>
+    </item>
+
+</menu>
