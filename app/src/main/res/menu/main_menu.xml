@@ -6,8 +6,15 @@
         android:checkableBehavior="single">
 
         <item
+            android:id="@+id/drawerMain"
+            android:title="Home"
+            android:icon="@drawable/menu_categories"
+            android:iconTint="@color/black"/>
+
+
+        <item
             android:id="@+id/drawerExtras"
-            android:title="Extras"
+            android:title="Others"
             android:icon="@drawable/menu_extra"
             android:iconTint="@color/black"/>
 

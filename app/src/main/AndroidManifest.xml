@@ -13,14 +13,15 @@
         android:theme="@style/Theme.Aircomms"
         tools:targetApi="31">
         <activity
-            android:name=".copy"
+            android:name=".airlineCode.Asia"
+            android:theme="@style/Theme.Aircomms.CustomTheme"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Phonetics"
+            android:name=".airlineCode.AirlineCode"
             android:exported="false"
             android:theme="@style/Theme.Aircomms.CustomTheme">
             <meta-data
@@ -28,7 +29,22 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Extras"
+            android:name=".copy"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".phonetics.Phonetics"
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms.CustomTheme">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".extras.Extras"
             android:exported="false"
             android:theme="@style/Theme.Aircomms.CustomTheme">
             <meta-data

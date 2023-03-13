@@ -4,21 +4,19 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.cardview.widget.CardView;
-import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.example.aircomms.airlineCode.AirlineCode;
+import com.example.aircomms.extras.Extras;
+import com.example.aircomms.phonetics.Phonetics;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.Objects;
@@ -35,7 +33,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
         init();
         navigationOpen();
-
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
     }
@@ -64,13 +61,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();     // Show navigation drawer when clicked
-
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.mm1);
-
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.mm5);
 
         navigationView.setNavigationItemSelectedListener(this); //navigation drawer item clickable
+        Menu menu = navigationView.getMenu();
+        MenuItem menuItem = menu.findItem(R.id.drawerMain);
+        menuItem.setChecked(true);
+
+
+
     }
 
     @Override
@@ -81,6 +82,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(intent);
                 finish();
                 break;
+
         }
         return true;
     }
@@ -106,5 +108,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public void phonetics(View view) {
         startActivity(new Intent(MainActivity.this, Phonetics.class));
+    }
+
+    public void airline_code(View view) {
+        startActivity(new Intent(MainActivity.this, AirlineCode.class));
     }
 }
