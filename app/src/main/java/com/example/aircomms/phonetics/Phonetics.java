@@ -32,6 +32,12 @@ public class Phonetics extends AppCompatActivity {
         setCharInfo();
 
     }
+    @Override
+    public void onBackPressed() {
+
+        super.onBackPressed();
+        overridePendingTransition(R.anim.zoom_in, R.anim.zoom_out);
+    }
 
     private void setAdapter (){
         PhoneticsAdapter adapter = new PhoneticsAdapter(itemsArrayList);

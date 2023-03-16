@@ -13,9 +13,49 @@
         android:theme="@style/Theme.Aircomms"
         tools:targetApi="31">
         <activity
-            android:name=".airlineCode.Asia"
-            android:theme="@style/Theme.Aircomms.CustomTheme"
-            android:exported="false">
+            android:name=".airlineCode.South.South"
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms.CustomTheme">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".airlineCode.Noth.North"
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms.CustomTheme">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".airlineCode.Europe.Europe"
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms.CustomTheme">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".airlineCode.Australia.Australia"
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms.CustomTheme">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".airlineCode.Africa.Africa"
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms.CustomTheme">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".airlineCode.Asia.Asia"
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms.CustomTheme">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

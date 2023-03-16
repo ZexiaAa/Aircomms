@@ -24,10 +24,22 @@
         <item name="android:windowLightStatusBar">true</item>
         <item name="windowActionBar">false</item>
         <item name="colorAccent">@color/white</item>
+     <!--   <item name="android:windowAnimationStyle">@style/ActivityAnim</item>-->
     </style>
 
     <style name="PoppinsTextViewStyle" parent="android:Widget.TextView">
         <item name="android:fontFamily">@font/poppins_regular</item>
 
     </style>
+
+    <style name="CustomScrollbar">
+        <item name="android:scrollbarThumbHorizontal">@drawable/custom_scrollbar</item>
+        <item name="android:scrollbarTrackHorizontal">@android:color/transparent</item>
+    </style>
+
+    <!--<style name="ActivityAnim" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_in</item>
+    </style>-->
+
 </resources>
