@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:background="@color/white"
+    android:background="@color/bg"
     tools:context=".airlineCode.AirlineCode">
 
     <LinearLayout
@@ -40,7 +40,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    app:layout_constraintGuide_percent="0.46" />
+                    app:layout_constraintGuide_percent="0.47" />
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guide4"
@@ -49,13 +49,20 @@
                     android:orientation="vertical"
                     app:layout_constraintGuide_percent="0.5" />
 
-                <ImageView
+
+                <TextView
                     android:id="@+id/backAirCode"
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="28dp"
+                    android:text="Back"
+                    android:textSize="14dp"
+                    android:drawablePadding="5dp"
+                    android:textColor="@color/tv_black"
                     android:onClick="asia_back"
-                    android:src="@drawable/ic_baseline_arrow_back_ios_new_24"
+                    android:gravity="center_horizontal"
+                    android:fontFamily="@font/poppins_regular"
+                    android:drawableStart="@drawable/ic_baseline_arrow_back_ios_new_24"
                     app:layout_constraintStart_toStartOf="@+id/guide1"
                     app:layout_constraintTop_toTopOf="parent"
                     app:navigationContentDescription="Menu" />
@@ -64,26 +71,44 @@
                 <TextView
                     android:id="@+id/textView5"
                     android:layout_width="wrap_content"
-                    android:layout_height="36dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
-                    android:fontFamily="@font/poppins_bold"
+                    android:fontFamily="@font/poppins_semibold"
                     android:text="Airline Code"
-                    android:textColor="@color/black"
-                    android:textSize="25sp"
+                    android:textColor="@color/tv_black"
+                    android:textSize="24sp"
                     app:layout_constraintStart_toStartOf="@+id/guide1"
                     app:layout_constraintTop_toBottomOf="@+id/backAirCode" />
 
+                <ImageButton
+                    android:id="@+id/bookmark_button"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/airlinecode"
+                    android:backgroundTint="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView5"
+                    app:layout_constraintEnd_toStartOf="@+id/guide2"
+                    app:layout_constraintTop_toTopOf="@+id/textView5" />
 
-                <androidx.cardview.widget.CardView
+
+
+                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardView_africa"
                     android:layout_width="0dp"
                     android:layout_height="187.6dp"
-                    app:cardCornerRadius="20dp"
                     android:onClick="africa"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="10dp"
+                    app:cardBackgroundColor="@color/ligth_cardView"
                     app:layout_constraintBottom_toBottomOf="@+id/cardView_asia"
                     app:layout_constraintEnd_toStartOf="@+id/guide3"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/guide1">
+                    app:layout_constraintStart_toStartOf="@+id/guide1"
+                    app:layout_constraintTop_toTopOf="@+id/cardView_asia"
+                    app:rippleColor="@color/ripple">
+
+
+
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
@@ -92,7 +117,9 @@
                         <ImageView
                             android:layout_width="90dp"
                             android:layout_height="90dp"
-                            android:src="@drawable/b_africa"
+                            android:layout_marginStart="10dp"
+                            android:background="@drawable/b_africa"
+                            android:backgroundTint="@color/black"
                             app:layout_constraintBottom_toTopOf="@+id/textView2"
                             app:layout_constraintStart_toStartOf="parent" />
 
@@ -100,12 +127,12 @@
                             android:id="@+id/textView2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
                             android:layout_marginBottom="56dp"
                             android:fontFamily="@font/poppins_semibold"
                             android:text="Africa"
-                            android:layout_marginStart="20dp"
-                            android:textColor="@color/black"
-                            android:textSize="16sp"
+                            android:textColor="@color/tv_black"
+                            android:textSize="14sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent" />
 
@@ -122,127 +149,140 @@
                             app:layout_constraintStart_toStartOf="@+id/textView2"
                             app:layout_constraintTop_toBottomOf="@+id/textView2" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
-                <androidx.cardview.widget.CardView
+                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardView_asia"
                     android:layout_width="0dp"
                     android:layout_height="187.6dp"
-                    app:cardBackgroundColor="@color/black"
+                    android:onClick="asia"
+                    app:cardBackgroundColor="@color/dark_cardView"
                     app:cardCornerRadius="20dp"
+                    app:cardElevation="10dp"
                     android:layout_marginTop="20dp"
                     app:layout_constraintEnd_toStartOf="@+id/guide2"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="@+id/guide4"
-                    app:layout_constraintTop_toBottomOf="@+id/textView5">
+                    app:layout_constraintTop_toBottomOf="@+id/textView5"
+                    app:rippleColor="@color/ripple">
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
 
-                        <ImageView
-                            android:layout_width="90dp"
-                            android:layout_height="90dp"
-                            android:layout_marginStart="16dp"
-                            android:src="@drawable/b_asia"
-                            android:onClick="asia"
-                            app:layout_constraintBottom_toTopOf="@+id/textView3"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
 
-                        <TextView
-                            android:id="@+id/textView3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="20dp"
-                            android:layout_marginBottom="56dp"
-                            android:fontFamily="@font/poppins_semibold"
-                            android:text="Asia"
-                            android:textColor="@color/white"
-                            android:textSize="16sp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent" />
+                            <ImageView
+                                android:layout_width="90dp"
+                                android:layout_height="90dp"
+                                android:layout_marginStart="10dp"
+                                android:background="@drawable/b_asia"
+                                android:backgroundTint="@color/white"
+                                app:layout_constraintBottom_toTopOf="@+id/textView3"
+                                app:layout_constraintStart_toStartOf="parent" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
-                            android:background="@drawable/rounded_stroke"
-                            android:backgroundTint="@color/light_gray1"
-                            android:fontFamily="@font/poppins_regular"
-                            android:text="View Details"
-                            android:textColor="@color/light_gray1"
-                            android:textSize="13sp"
-                            android:onClick="asia"
-                            app:layout_constraintStart_toStartOf="@+id/textView3"
-                            app:layout_constraintTop_toBottomOf="@+id/textView3" />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
+                            <TextView
+                                android:id="@+id/textView3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginBottom="56dp"
+                                android:fontFamily="@font/poppins_semibold"
+                                android:onClick="asia"
+                                android:text="Asia"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent" />
 
-                </androidx.cardview.widget.CardView>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/rounded_stroke"
+                                android:onClick="asia"
+                                android:backgroundTint="@color/light_gray1"
+                                android:fontFamily="@font/poppins_regular"
+                                android:text="View Details"
+                                android:textColor="@color/light_gray1"
+                                android:textSize="13sp"
+                                app:layout_constraintStart_toStartOf="@+id/textView3"
+                                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <androidx.cardview.widget.CardView
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardView_austra"
                     android:layout_width="0dp"
                     android:layout_height="187.6dp"
-                    app:cardBackgroundColor="@color/black"
+                    app:cardBackgroundColor="@color/dark_cardView"
                     app:cardCornerRadius="20dp"
                     android:layout_marginTop="20dp"
+                    app:cardElevation="10dp"
+                    app:rippleColor="@color/ripple"
                     android:onClick="australia"
                     app:layout_constraintEnd_toStartOf="@+id/guide3"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/guide1"
                     app:layout_constraintTop_toBottomOf="@+id/cardView_africa">
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:layout_width="90dp"
+                                android:layout_height="90dp"
+                                android:layout_marginStart="10dp"
+                                android:background="@drawable/b_australia"
+                                android:backgroundTint="@color/white"
+                                app:layout_constraintBottom_toTopOf="@+id/textView4"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <TextView
+                                android:id="@+id/textView4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginBottom="56dp"
+                                android:fontFamily="@font/poppins_semibold"
+                                android:text="Australia"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/rounded_stroke"
+                                android:backgroundTint="@color/light_gray1"
+                                android:fontFamily="@font/poppins_regular"
+                                android:text="View Details"
+                                android:textColor="@color/light_gray1"
+                                android:onClick="australia"
+
+                                android:textSize="13sp"
+                                app:layout_constraintStart_toStartOf="@+id/textView4"
+                                app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-                        <ImageView
-                            android:layout_width="90dp"
-                            android:layout_height="90dp"
-                            android:src="@drawable/b_australia"
-                            app:layout_constraintBottom_toTopOf="@+id/textView4"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.74" />
+                </com.google.android.material.card.MaterialCardView>
 
-                        <TextView
-                            android:id="@+id/textView4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="20dp"
-                            android:layout_marginBottom="56dp"
-                            android:fontFamily="@font/poppins_semibold"
-                            android:text="Australia"
-                            android:textColor="@color/white"
-                            android:textSize="16sp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
-                            android:background="@drawable/rounded_stroke"
-                            android:backgroundTint="@color/light_gray1"
-                            android:fontFamily="@font/poppins_regular"
-                            android:text="View Details"
-                            android:onClick="australia"
-                            android:textColor="@color/light_gray1"
-                            android:textSize="13sp"
-                            app:layout_constraintStart_toStartOf="@+id/textView4"
-                            app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
+                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardView_europe"
                     android:layout_width="0dp"
                     android:layout_height="187.6dp"
                     app:cardCornerRadius="20dp"
                     android:onClick="europe"
+                    app:cardElevation="10dp"
+                    app:rippleColor="@color/ripple"
+                    app:cardBackgroundColor="@color/ligth_cardView"
                     app:layout_constraintEnd_toStartOf="@+id/guide2"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/guide4"
@@ -258,7 +298,8 @@
                             android:layout_height="90dp"
                             android:layout_marginStart="16dp"
                             android:layout_marginTop="24dp"
-                            android:src="@drawable/b_europe"
+                            android:background="@drawable/b_europe"
+                            android:backgroundTint="@color/black"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -271,7 +312,7 @@
                             android:text="Europe"
                             android:layout_marginStart="20dp"
                             android:textColor="@color/black"
-                            android:textSize="13sp"
+                            android:textSize="14sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent" />
 
@@ -280,24 +321,26 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
                             android:background="@drawable/rounded_stroke"
-                            android:backgroundTint="@color/light_gray1"
+                            android:backgroundTint="@color/light_gray"
                             android:fontFamily="@font/poppins_regular"
                             android:text="View Details"
-                            android:onClick="europe"
-                            android:textColor="@color/light_gray1"
+                            android:textColor="@color/light_gray"
                             android:textSize="13sp"
                             app:layout_constraintStart_toStartOf="@+id/textView6"
                             app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
-                <androidx.cardview.widget.CardView
+                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardView_northAmerica"
                     android:layout_width="0dp"
                     android:layout_height="187.6dp"
                     app:cardCornerRadius="20dp"
+                    app:cardElevation="10dp"
+                    app:rippleColor="@color/ripple"
                     android:onClick="north"
+                    app:cardBackgroundColor="@color/ligth_cardView"
                     app:layout_constraintBottom_toBottomOf="@+id/cardView_southAmerica"
                     app:layout_constraintEnd_toStartOf="@+id/guide3"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -312,7 +355,8 @@
                             android:layout_width="90dp"
                             android:layout_height="90dp"
                             android:layout_marginStart="16dp"
-                            android:src="@drawable/b_north"
+                            android:background="@drawable/b_north"
+                            android:backgroundTint="@color/black"
                             app:layout_constraintBottom_toTopOf="@+id/textView9"
                             app:layout_constraintStart_toStartOf="parent" />
 
@@ -323,8 +367,8 @@
                             android:layout_marginBottom="48dp"
                             android:fontFamily="@font/poppins_semibold"
                             android:text="North America"
-                            android:textColor="@color/black"
-                            android:textSize="13sp"
+                            android:textColor="@color/tv_black"
+                            android:textSize="14sp"
                             android:layout_marginStart="20dp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent" />
@@ -334,11 +378,11 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
                             android:background="@drawable/rounded_stroke"
-                            android:backgroundTint="@color/light_gray1"
+                            android:backgroundTint="@color/light_gray"
                             android:fontFamily="@font/poppins_regular"
                             android:text="View Details"
+                            android:textColor="@color/light_gray"
                             android:onClick="north"
-                            android:textColor="@color/light_gray1"
                             android:textSize="13sp"
                             app:layout_constraintStart_toStartOf="@+id/textView9"
                             app:layout_constraintTop_toBottomOf="@+id/textView9" />
@@ -346,36 +390,38 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
-                <androidx.cardview.widget.CardView
+                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardView_southAmerica"
                     android:layout_width="0dp"
                     android:layout_height="187.6dp"
                     android:layout_marginTop="20dp"
-                    app:cardBackgroundColor="@color/black"
                     app:cardCornerRadius="20dp"
                     android:onClick="south"
+                    app:cardElevation="10dp"
+                    app:rippleColor="@color/ripple"
+                    app:cardBackgroundColor="@color/dark_cardView"
                     app:layout_constraintEnd_toStartOf="@+id/guide2"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/guide4"
                     app:layout_constraintTop_toBottomOf="@+id/cardView_europe">
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:layout_width="90dp"
+                                android:layout_height="90dp"
+                                android:background="@drawable/b_south"
+                                android:backgroundTint="@color/white"
+                                app:layout_constraintBottom_toTopOf="@+id/textView11"
+                                app:layout_constraintStart_toStartOf="parent" />
 
 
-                        <ImageView
-                            android:layout_width="90dp"
-                            android:layout_height="90dp"
-                            android:src="@drawable/b_south"
-                            app:layout_constraintBottom_toTopOf="@+id/textView11"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.662" />
-
-                        <TextView
+                            <TextView
                             android:id="@+id/textView11"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -383,7 +429,7 @@
                             android:fontFamily="@font/poppins_semibold"
                             android:text="South America"
                             android:textColor="@color/white"
-                            android:textSize="13sp"
+                            android:textSize="14sp"
                             android:layout_marginStart="20dp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent" />
@@ -404,8 +450,7 @@
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
                 <LinearLayout
                     android:id="@+id/linearLayout"

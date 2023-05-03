@@ -13,25 +13,225 @@
         android:theme="@style/Theme.Aircomms"
         tools:targetApi="31">
         <activity
-            android:name=".airlineCode.South.South"
+            android:name=".ShareApp"
             android:exported="false"
-            android:theme="@style/Theme.Aircomms.CustomTheme">
+            android:theme="@style/Theme.Aircomms">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".airlineCode.Noth.North"
+            android:name=".approach.SampleFile"
             android:exported="false"
-            android:theme="@style/Theme.Aircomms.CustomTheme">
+            android:theme="@style/Theme.Aircomms">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".airlineCode.Europe.Europe"
+            android:name=".approach.SampleSTO"
             android:exported="false"
-            android:theme="@style/Theme.Aircomms.CustomTheme">
+            android:theme="@style/Theme.Aircomms">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".approach.Arrival.ArrivalCoordination"
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".approach.Arrival.ArrivalClearance"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".approach.Arrival.ArrivalMonitoring"
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".approach.Arrival.ArrivalInitial"
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".approach.Arrival.ArrivalRelease"
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".approach.Arrival.ArrivalRelay"
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".approach.Arrival.ArrivalEstimate"
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".airportCode.Asia.Phil.International.International"
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".airportCode.Asia.Phil.Domestic.Domestic"
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".airportCode.Asia.Phil.AsiaPH"
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".airportCode.Asia.Thailand.AsiaThailand"
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".airportCode.Asia.SouthKorea.AsiaSouthKorea"
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".airportCode.Asia.Japan.AsiaJapan"
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".airportCode.Asia.Indonesia.AsiaIndonesia"
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".airportCode.Asia.India.AsiaIndia"
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".airportCode.Asia.China.AsiaChina"
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".airportCode.Asia.AirportAsia"
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Extras.Other"
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".History.History"
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Bookmark.BookmarkActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".airportCode.Europe.Airport_Europee"
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".airportCode.Australia.Airport_Australia"
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".airportCode.North.Airport_North"
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".airportCode.South.Airport_South"
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -39,7 +239,79 @@
         <activity
             android:name=".airlineCode.Australia.Australia"
             android:exported="false"
-            android:theme="@style/Theme.Aircomms.CustomTheme">
+            android:theme="@style/Theme.Aircomms">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".airportCode.Africa.Airport_Africa"
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".airportCode.AirportCode"
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".approach.STO.STO"
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".approach.Arrival.Arrival"
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".approach.Departure.Departure"
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".approach.ApproachControl"
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".airlineCode.South.South"
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".airlineCode.Noth.North"
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".airlineCode.Europe.Europe"
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -47,7 +319,7 @@
         <activity
             android:name=".airlineCode.Africa.Africa"
             android:exported="false"
-            android:theme="@style/Theme.Aircomms.CustomTheme">
+            android:theme="@style/Theme.Aircomms">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -55,7 +327,7 @@
         <activity
             android:name=".airlineCode.Asia.Asia"
             android:exported="false"
-            android:theme="@style/Theme.Aircomms.CustomTheme">
+            android:theme="@style/Theme.Aircomms">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -63,7 +335,7 @@
         <activity
             android:name=".airlineCode.AirlineCode"
             android:exported="false"
-            android:theme="@style/Theme.Aircomms.CustomTheme">
+            android:theme="@style/Theme.Aircomms">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -78,28 +350,18 @@
         <activity
             android:name=".phonetics.Phonetics"
             android:exported="false"
-            android:theme="@style/Theme.Aircomms.CustomTheme">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".extras.Extras"
-            android:exported="false"
-            android:theme="@style/Theme.Aircomms.CustomTheme">
+            android:theme="@style/Theme.Aircomms">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true"
-            android:theme="@style/Theme.Aircomms.CustomTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
         </activity>
     </application>
 

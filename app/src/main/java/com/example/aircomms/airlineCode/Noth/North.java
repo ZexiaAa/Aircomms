@@ -1,19 +1,31 @@
 package com.example.aircomms.airlineCode.Noth;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.SearchView;
+import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.aircomms.MainActivity;
 import com.example.aircomms.R;
+import com.example.aircomms.SharedPref;
+import com.example.aircomms.airlineCode.Africa.Africa;
+import com.example.aircomms.airlineCode.AirlineCode;
 import com.example.aircomms.airlineCode.Europe.EuropeAdapter;
 import com.example.aircomms.airlineCode.Europe.EuropeItem;
 
@@ -23,8 +35,25 @@ public class North extends AppCompatActivity {
     private ArrayList<NorthItem> items;
     private RecyclerView recyclerView;
     private SearchView searchView;
+    SharedPref sharedPref;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        sharedPref = new SharedPref(this);
+
+        if (sharedPref.loadNightModeState()){
+            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            Window window = getWindow();
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(ContextCompat.getColor(North.this, R.color.bg));
+        }else {
+            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+            Window window = getWindow();
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(ContextCompat.getColor(North.this, R.color.bg));
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_north);
 
@@ -45,6 +74,15 @@ public class North extends AppCompatActivity {
         setAdapter();
         setCharInfo();
         setCustomSearchView();
+        historyNorth();
+    }
+
+    private void historyNorth() {
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean("Arline Code \n(North America)", true);
+        editor.putLong("Arline Code \n(North America)", System.currentTimeMillis());
+        editor.apply();
     }
 
     private void setCustomSearchView() {
@@ -117,5 +155,9 @@ public class North extends AppCompatActivity {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
 
+    }
+
+    public void north_back(View view) {
+        startActivity(new Intent(North.this, AirlineCode.class));
     }
 }

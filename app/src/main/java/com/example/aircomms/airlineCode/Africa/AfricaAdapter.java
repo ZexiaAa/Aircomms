@@ -13,6 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.aircomms.R;
 import com.example.aircomms.airlineCode.Asia.AsiaAdapter;
 import com.example.aircomms.airlineCode.Asia.AsiaItem;
+import com.example.aircomms.airlineCode.Australia.AustraliaItem;
+import com.example.aircomms.phonetics.Items;
 
 import java.util.ArrayList;
 
@@ -21,16 +23,18 @@ public class AfricaAdapter extends RecyclerView.Adapter<AfricaAdapter.MyViewHold
     Context context;
     private ArrayList<AfricaItem> itemsArrayList;
 
+
+    public AfricaAdapter(ArrayList<AfricaItem> itemsArrayList) {
+        this.itemsArrayList = itemsArrayList;
+        this.context = context;
+    }
+
+
     public void setFilteredList (ArrayList<AfricaItem> filteredList){
 
         this.itemsArrayList = filteredList;
         notifyDataSetChanged();
 
-    }
-
-    public AfricaAdapter(ArrayList<AfricaItem> itemsArrayList) {
-        this.itemsArrayList = itemsArrayList;
-        this.context = context;
     }
 
 
@@ -56,6 +60,7 @@ public class AfricaAdapter extends RecyclerView.Adapter<AfricaAdapter.MyViewHold
     public int getItemCount() {
         return itemsArrayList.size();
     }
+
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         private TextView _callsign,  _icao;

@@ -3,13 +3,11 @@ package com.example.aircomms.extras;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.animation.LayoutTransition;
 import android.content.Intent;
 import android.os.Bundle;
 import android.transition.AutoTransition;
@@ -17,27 +15,15 @@ import android.transition.TransitionManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ExpandableListAdapter;
-import android.widget.ExpandableListView;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.LinearLayout;
-import android.widget.Spinner;
-import android.widget.TextView;
 
 import com.example.aircomms.MainActivity;
 import com.example.aircomms.R;
-import com.example.aircomms.phonetics.Items;
-import com.example.aircomms.phonetics.PhoneticsAdapter;
+import com.example.aircomms.SharedPref;
 import com.google.android.material.navigation.NavigationView;
 
-import org.w3c.dom.Text;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Objects;
 
 public class Extras extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -46,8 +32,27 @@ public class Extras extends AppCompatActivity implements NavigationView.OnNaviga
     Toolbar toolbar;
     LinearLayout layout, list, layout1, list1;
 
+
+    SharedPref sharedPref;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        sharedPref = new SharedPref(this);
+
+        if (sharedPref.loadNightModeState()){
+            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            Window window = getWindow();
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(ContextCompat.getColor(Extras.this, R.color.bg));
+        }else {
+            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+            Window window = getWindow();
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(ContextCompat.getColor(Extras.this, R.color.bg));
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_extras);
 

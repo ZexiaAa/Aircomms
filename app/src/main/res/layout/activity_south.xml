@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:background="@color/white"
+    android:background="@color/bg"
     android:scrollbarStyle="insideInset"
     tools:context=".airlineCode.South.South">
 
@@ -49,11 +49,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
-                android:text="   "
+                android:text="Back"
                 android:textSize="14dp"
                 android:drawablePadding="5dp"
                 android:textColor="@color/black"
-                android:onClick="asia_back"
+                android:onClick="south_back"
                 android:gravity="center_horizontal"
                 android:fontFamily="@font/poppins_regular"
                 android:drawableStart="@drawable/ic_baseline_arrow_back_ios_new_24"
@@ -93,7 +93,7 @@
                     app:autoShowKeyboard="true"
                     android:requiresFadingEdge="vertical"
                     app:closeIcon="@drawable/ic_baseline_close_24"
-                    app:queryBackground="@color/white"
+                    app:queryBackground="@color/bg"
                     app:queryHint="Search"
                     app:searchIcon="@drawable/ic_baseline_search_24" />
             </RelativeLayout>
@@ -101,7 +101,7 @@
                 android:id="@+id/cardView7"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:cardBackgroundColor="@color/light_black"
+                app:cardBackgroundColor="@color/dark_cardView"
                 app:cardCornerRadius="15dp"
                 android:layout_marginTop="10dp"
                 app:layout_constraintEnd_toStartOf="@+id/guide2"
@@ -115,7 +115,7 @@
                     android:layout_margin="20dp"
                     android:fontFamily="@font/poppins_regular"
                     android:justificationMode="inter_word"
-                    android:text="here is a list of major airlines in South America and their corresponding ICAO codes:"
+                    android:text="Here is a list of major airlines in South America and their corresponding ICAO codes:"
                     android:textColor="@color/white"
                     android:textSize="14sp" />
             </androidx.cardview.widget.CardView>

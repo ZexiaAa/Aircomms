@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:background="@color/white"
+    android:background="@color/bg"
     android:scrollbarStyle="insideInset"
     tools:context=".airlineCode.Asia.Asia">
 
@@ -43,16 +43,38 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.68" />
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="25dp"
+                app:layout_constraintBottom_toBottomOf="@+id/backAirCode"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/backAirCode">
+
+
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/searchViewAsia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="187dp"
+                    android:layout_marginTop="0dp"
+                    app:autoShowKeyboard="true"
+                    android:requiresFadingEdge="vertical"
+                    app:closeIcon="@drawable/ic_baseline_close_24"
+                    app:queryBackground="@color/bg"
+                    app:queryHint="Search"
+                    app:searchIcon="@drawable/ic_baseline_search_24" />
+            </RelativeLayout>
 
             <TextView
                 android:id="@+id/backAirCode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
-                android:text="   "
+                android:text="Back"
                 android:textSize="14dp"
                 android:drawablePadding="5dp"
-                android:textColor="@color/black"
+                android:textColor="@color/tv_black"
                 android:onClick="asia_back"
                 android:gravity="center_horizontal"
                 android:fontFamily="@font/poppins_regular"
@@ -75,34 +97,13 @@
                 app:layout_constraintTop_toBottomOf="@+id/backAirCode" />
 
 
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="25dp"
-                app:layout_constraintBottom_toBottomOf="@+id/backAirCode"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/backAirCode">
-
-
-                <androidx.appcompat.widget.SearchView
-                    android:id="@+id/searchView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="187dp"
-                    android:layout_marginTop="0dp"
-                    app:autoShowKeyboard="true"
-                    android:requiresFadingEdge="vertical"
-                    app:closeIcon="@drawable/ic_baseline_close_24"
-                    app:queryBackground="@color/white"
-                    app:queryHint="Search"
-                    app:searchIcon="@drawable/ic_baseline_search_24" />
-            </RelativeLayout>
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardView7"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:cardBackgroundColor="@color/light_black"
+                app:cardBackgroundColor="@color/dark_cardView"
                 app:cardCornerRadius="15dp"
+                app:cardElevation="10dp"
                 android:layout_marginTop="10dp"
                 app:layout_constraintEnd_toStartOf="@+id/guide2"
                 app:layout_constraintStart_toStartOf="@+id/guide1"
@@ -119,7 +120,7 @@
 Aviation Organization) codes:"
                     android:textColor="@color/white"
                     android:textSize="14sp" />
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
 
             <TextView
@@ -129,7 +130,8 @@ Aviation Organization) codes:"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/poppins_semibold"
                 android:text="Call Sign"
-                android:textColor="@color/black"
+                android:layout_marginStart="2dp"
+                android:textColor="@color/tv_black"
                 android:textSize="15sp"
                 app:layout_constraintStart_toStartOf="@+id/guide1"
                 app:layout_constraintTop_toBottomOf="@+id/cardView7" />
@@ -140,7 +142,7 @@ Aviation Organization) codes:"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_semibold"
                 android:text="Logo"
-                android:textColor="@color/black"
+                android:textColor="@color/tv_black"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toBottomOf="@+id/textView7"
                 app:layout_constraintEnd_toStartOf="@+id/guide4"
@@ -154,7 +156,7 @@ Aviation Organization) codes:"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_semibold"
                 android:text="ICAO Code"
-                android:textColor="@color/black"
+                android:textColor="@color/tv_black"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toBottomOf="@+id/textView7"
                 app:layout_constraintEnd_toStartOf="@+id/guide2"
@@ -162,22 +164,25 @@ Aviation Organization) codes:"
                 app:layout_constraintStart_toStartOf="@+id/guide4"
                 app:layout_constraintTop_toTopOf="@+id/textView7" />
 
-            <RelativeLayout
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginEnd="32dp"
-                android:paddingBottom="10dp"
                 android:layout_marginTop="10dp"
                 app:layout_constraintEnd_toStartOf="@+id/guide2"
                 app:layout_constraintStart_toStartOf="@+id/guide1"
                 app:layout_constraintTop_toBottomOf="@+id/textView7">
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerview_asia"
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-            </RelativeLayout>
+                    android:layout_height="wrap_content">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerview_asia"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+
+            </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>

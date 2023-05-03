@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/drawerMain"
-    android:background="@color/white"
+    android:background="@color/bg"
     android:fitsSystemWindows="true"
     android:layout_gravity="start"
     android:orientation="vertical"
@@ -18,15 +18,19 @@
         android:layout_gravity="start"
         app:headerLayout="@layout/header"
         app:menu="@menu/main_menu"
+        android:background="@color/bg"
         app:itemTextAppearance="@style/PoppinsTextViewStyle"
         app:itemIconTint="@color/black"
         app:itemTextColor="@color/black"
         app:itemIconSize="20dp"
+        app:itemRippleColor="@color/ripple"
         app:navigationContentDescription="Menu"
         app:navigationIcon="@drawable/mm1" >
 
 
     </com.google.android.material.navigation.NavigationView>
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -36,11 +40,22 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:scrollbarStyle="outsideInset">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/darkModeButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_gravity="end|center_vertical"
+                    android:scaleType="center"
+                    app:layout_constraintBottom_toBottomOf="@+id/toolbarMain"
+                    app:layout_constraintEnd_toStartOf="@+id/guide2"
+                    app:layout_constraintTop_toTopOf="@+id/toolbarMain" />
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guide1"
@@ -118,13 +133,16 @@
                     app:layout_constraintStart_toStartOf="@+id/guide1"
                     app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
-                <androidx.cardview.widget.CardView
+                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardView_africa"
                     android:layout_width="0dp"
                     android:layout_height="130dp"
                     android:layout_marginTop="20dp"
                     app:cardCornerRadius="20dp"
-                    android:onClick="airline_code"
+                    android:onClick="phonetics"
+                    app:cardElevation="10dp"
+                    app:cardBackgroundColor="@color/ligth_cardView"
+                    app:rippleColor="@color/ripple"
                     app:layout_constraintEnd_toStartOf="@+id/guide2"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/guide1"
@@ -138,7 +156,8 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginEnd="16dp"
-                            android:src="@drawable/phonetics1"
+                            android:background="@drawable/phonetics1"
+                            android:backgroundTint="@color/black"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -164,16 +183,16 @@
                             android:background="@drawable/rounded_stroke"
                             android:backgroundTint="@color/light_gray"
                             android:fontFamily="@font/poppins_regular"
-                            android:onClick="airline_code"
+                            android:onClick="phonetics"
                             android:text="View Details"
                             android:textColor="@color/light_gray"
                             android:textSize="13sp"
                             app:layout_constraintStart_toStartOf="@+id/textView2"
                             app:layout_constraintTop_toBottomOf="@+id/textView2" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
-                <androidx.cardview.widget.CardView
+                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardView_asia"
                     android:layout_width="0dp"
                     android:layout_height="150dp"
@@ -181,15 +200,13 @@
                     android:onClick="airline_code"
                     android:clipToOutline="true"
                     app:cardCornerRadius="20dp"
+                    app:cardElevation="10dp"
+                    app:cardBackgroundColor="@color/dark_cardView"
+                    app:rippleColor="@color/ripple"
                     app:layout_constraintEnd_toStartOf="@+id/guide2"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="@+id/guide1"
                     app:layout_constraintTop_toBottomOf="@+id/cardView_africa">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/cv_bg2">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
@@ -232,16 +249,18 @@
                             app:layout_constraintStart_toStartOf="@+id/textView3"
                             app:layout_constraintTop_toBottomOf="@+id/textView3" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
-                <androidx.cardview.widget.CardView
+                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardView_austra"
                     android:layout_width="0dp"
                     android:layout_height="150dp"
                     app:cardBackgroundColor="@color/light_black"
                     app:cardCornerRadius="20dp"
                     android:layout_marginTop="10dp"
+                    app:rippleColor="@color/ripple"
+                    app:cardElevation="10dp"
+                    android:onClick="airport_code"
                     app:layout_constraintEnd_toStartOf="@+id/guide2"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/guide1"
@@ -251,7 +270,7 @@
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@drawable/cv_bg2">
+                        android:background="@color/dark_cardView">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
@@ -297,14 +316,18 @@
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </RelativeLayout>
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
-                <androidx.cardview.widget.CardView
+                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardView_europe"
                     android:layout_width="0dp"
                     android:layout_height="150dp"
                     app:cardCornerRadius="20dp"
                     android:layout_marginTop="10dp"
+                    app:cardBackgroundColor="@color/ligth_cardView"
+                    app:cardElevation="10dp"
+                    android:onClick="approach"
+                    app:rippleColor="@color/ripple"
                     app:layout_constraintEnd_toStartOf="@+id/guide2"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/guide1"
@@ -318,8 +341,9 @@
                         <ImageView
                             android:layout_width="72dp"
                             android:layout_height="72dp"
-                            android:src="@drawable/acc"
+                            android:background="@drawable/acc"
                             android:layout_marginEnd="25dp"
+                            android:backgroundTint="@color/black"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -332,6 +356,7 @@
                             android:text="Approach Control \nCommunication"
                             android:textColor="@color/black"
                             android:textSize="13sp"
+                            android:onClick="approach"
                             android:layout_marginStart="25dp"
                             app:layout_constraintVertical_bias="0.359"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -343,17 +368,17 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
                             android:background="@drawable/rounded_stroke"
-                            android:backgroundTint="@color/light_gray1"
+                            android:backgroundTint="@color/light_gray"
                             android:fontFamily="@font/poppins_regular"
                             android:onClick="ClassManage"
                             android:text="View Details"
-                            android:textColor="@color/light_gray1"
+                            android:textColor="@color/light_gray"
                             android:textSize="13sp"
                             app:layout_constraintStart_toStartOf="@+id/textView6"
                             app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
 
                 <LinearLayout

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    tools:context=".approach.ApproachControl">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.07" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".92" />
+
+
+            <TextView
+                android:id="@+id/backMain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:onClick="back"
+                android:text="Back"
+                android:textSize="14dp"
+                android:fontFamily="@font/poppins_regular"
+                android:textColor="@color/tv_black"
+                android:drawableStart="@drawable/ic_baseline_arrow_back_ios_new_24"
+                app:layout_constraintStart_toStartOf="@+id/guide1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:navigationContentDescription="Menu" />
+
+            <ImageView
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:src="@drawable/acc"
+                app:layout_constraintBottom_toBottomOf="@+id/textView"
+                app:layout_constraintEnd_toStartOf="@+id/guide2" />
+
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Approach Control"
+                android:layout_marginStart="3dp"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="@+id/guide1"
+                app:layout_constraintTop_toBottomOf="@+id/backMain" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardView7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:cardBackgroundColor="@color/dark_cardView"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="10dp"
+                app:rippleColor="@color/light_gray"
+                app:layout_constraintEnd_toStartOf="@+id/guide2"
+                app:layout_constraintStart_toStartOf="@+id/guide1"
+                app:layout_constraintTop_toBottomOf="@+id/textView">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:justificationMode="inter_word"
+                    android:text="During this phase of flight, pilots receive instructions from approach controllers who guide them to the
+runway and provide information about other aircraft in the area. Approach control communication is
+essential for ensuring the safe and efficient movement of air traffic in and around the airport."
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Approach Control Communication"
+                android:textColor="@color/grayText"
+                android:textSize="14sp"
+                android:layout_marginStart="3dp"
+                app:layout_constraintStart_toStartOf="@+id/guide1"
+                app:layout_constraintTop_toBottomOf="@+id/cardView7" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:onClick="departure"
+                app:cardBackgroundColor="@color/ligth_cardView"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="5dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toStartOf="@+id/guide2"
+                app:layout_constraintStart_toStartOf="@+id/guide1"
+                app:layout_constraintTop_toBottomOf="@+id/cardView1"
+                app:rippleColor="@color/ripple">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView17"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="30dp"
+                        android:drawableEnd="@drawable/arrow_right"
+                        android:drawableTint="@color/light_gray"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:justificationMode="inter_word"
+                        android:text="Departure"
+                        android:textColor="@color/tv_black"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardView1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:onClick="arrival"
+                app:cardBackgroundColor="@color/ligth_cardView"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="5dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toStartOf="@+id/guide2"
+                app:layout_constraintStart_toStartOf="@+id/guide1"
+                app:layout_constraintTop_toBottomOf="@+id/textView16"
+                app:rippleColor="@color/ripple">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="30dp"
+                    android:drawableEnd="@drawable/arrow_right"
+                    android:drawableTint="@color/light_gray"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:justificationMode="inter_word"
+                    android:text="Arrival"
+                    android:textColor="@color/tv_black"
+                    android:textSize="14sp" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardView2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:onClick="sto"
+                app:cardBackgroundColor="@color/ligth_cardView"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="5dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toStartOf="@+id/guide2"
+                app:layout_constraintStart_toStartOf="@+id/guide1"
+                app:layout_constraintTop_toBottomOf="@+id/cardView"
+                app:rippleColor="@color/ripple">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="30dp"
+                    android:drawableEnd="@drawable/arrow_right"
+                    android:drawableTint="@color/light_gray"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:justificationMode="inter_word"
+                    android:text="Straight-Out Departure (STO)"
+                    android:textColor="@color/tv_black"
+                    android:textSize="14sp" />
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+</ScrollView>

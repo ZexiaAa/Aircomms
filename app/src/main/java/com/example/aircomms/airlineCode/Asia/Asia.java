@@ -1,6 +1,7 @@
 package com.example.aircomms.airlineCode.Asia;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.SearchView;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
@@ -10,12 +11,17 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -23,7 +29,12 @@ import android.widget.Toast;
 
 import com.example.aircomms.MainActivity;
 import com.example.aircomms.R;
+import com.example.aircomms.SharedPref;
+import com.example.aircomms.airlineCode.Africa.AfricaAdapter;
+import com.example.aircomms.airlineCode.Africa.AfricaItem;
 import com.example.aircomms.airlineCode.AirlineCode;
+import com.example.aircomms.airlineCode.Australia.AustraliaAdapter;
+import com.example.aircomms.airlineCode.Australia.AustraliaItem;
 import com.example.aircomms.phonetics.Items;
 import com.example.aircomms.phonetics.PhoneticsAdapter;
 
@@ -35,37 +46,44 @@ public class Asia extends AppCompatActivity {
 
     private ArrayList<AsiaItem> itemsAsia;
     private RecyclerView recyclerView;
+    private AsiaAdapter adapter;
+    private EditText searchEditText;
     private SearchView searchView;
+
+    SharedPref sharedPref;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        sharedPref = new SharedPref(this);
+
+        if (sharedPref.loadNightModeState()){
+            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            Window window = getWindow();
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(ContextCompat.getColor(Asia.this, R.color.bg));
+        }else {
+            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+            Window window = getWindow();
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(ContextCompat.getColor(Asia.this, R.color.bg));
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_asia);
 
-
+        searchView = findViewById(R.id.searchViewAsia);
         recyclerView = findViewById(R.id.recyclerview_asia);
         itemsAsia = new ArrayList<>();
 
-        searchView = findViewById(R.id.searchView);
-
-
-        TextView textView = null;
-        int id = getResources().getIdentifier("android:id/search_src_text", null, null);
-        if (searchView != null) {
-            textView = searchView.findViewById(id);
-        }
-        if (textView != null) {
-            Typeface typeface = ResourcesCompat.getFont(this, R.font.poppins_medium);
-            textView.setTypeface(typeface);
-        }
         setAdapter();
         setCharInfo();
+        historyAsia();
         setCustomSearchView();
 
+
     }
-
     private void setCustomSearchView() {
-
-
         searchView.clearFocus();
         searchView.setQueryHint("Search");
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -85,10 +103,6 @@ public class Asia extends AppCompatActivity {
                 return false;
             }
         });
-
-
-
-
     }
 
     private void fileList(String text) {
@@ -107,6 +121,14 @@ public class Asia extends AppCompatActivity {
             recyclerView.setAdapter(adapter);
         }
 
+    }
+
+    private void historyAsia() {
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean("Arline Code \n(Asia)", true);
+        editor.putLong("Arline Code \n(Asia)", System.currentTimeMillis());
+        editor.apply();
     }
 
 

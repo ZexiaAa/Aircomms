@@ -11,8 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.aircomms.R;
-import com.example.aircomms.airlineCode.Australia.AustraliaAdapter;
-import com.example.aircomms.airlineCode.Australia.AustraliaItem;
+import com.example.aircomms.airlineCode.Africa.AfricaItem;
+import com.example.aircomms.airportCode.Europe.EuropeItemm;
 
 import java.util.ArrayList;
 
@@ -21,17 +21,17 @@ public class EuropeAdapter  extends RecyclerView.Adapter<EuropeAdapter.MyViewHol
     Context context;
     private ArrayList<EuropeItem> itemsArrayList;
 
-    public void setFilteredList (ArrayList<EuropeItem> filteredList){
-
-        this.itemsArrayList = filteredList;
-        notifyDataSetChanged();
-
-    }
 
     public EuropeAdapter (ArrayList<EuropeItem> itemsArrayList) {
         this.itemsArrayList = itemsArrayList;
         this.context = context;
     }
+
+    public void filterList(ArrayList<EuropeItem> filteredList) {
+        itemsArrayList = filteredList;
+        notifyDataSetChanged();
+    }
+
     @NonNull
     @Override
     public EuropeAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

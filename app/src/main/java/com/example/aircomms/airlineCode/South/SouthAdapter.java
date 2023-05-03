@@ -11,8 +11,10 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.aircomms.R;
+import com.example.aircomms.airlineCode.Africa.AfricaItem;
 import com.example.aircomms.airlineCode.Europe.EuropeAdapter;
 import com.example.aircomms.airlineCode.Europe.EuropeItem;
+import com.example.aircomms.airlineCode.Noth.NorthItem;
 
 import java.util.ArrayList;
 
@@ -21,6 +23,12 @@ public class SouthAdapter extends RecyclerView.Adapter<SouthAdapter.MyViewHolder
     Context context;
     private ArrayList<SouthItem> itemsArrayList;
 
+
+    public SouthAdapter (ArrayList<SouthItem> itemsArrayList) {
+        this.itemsArrayList = itemsArrayList;
+        this.context = context;
+    }
+
     public void setFilteredList (ArrayList<SouthItem> filteredList){
 
         this.itemsArrayList = filteredList;
@@ -28,10 +36,6 @@ public class SouthAdapter extends RecyclerView.Adapter<SouthAdapter.MyViewHolder
 
     }
 
-    public SouthAdapter (ArrayList<SouthItem> itemsArrayList) {
-        this.itemsArrayList = itemsArrayList;
-        this.context = context;
-    }
     @NonNull
     @Override
     public SouthAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

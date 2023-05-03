@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.aircomms.R;
 import com.example.aircomms.airlineCode.Africa.AfricaAdapter;
 import com.example.aircomms.airlineCode.Africa.AfricaItem;
+import com.example.aircomms.airlineCode.Asia.AsiaItem;
 
 import java.util.ArrayList;
 
@@ -21,18 +22,19 @@ public class AustraliaAdapter extends RecyclerView.Adapter<AustraliaAdapter.MyVi
     Context context;
     private ArrayList<AustraliaItem> itemsArrayList;
 
+
+    public AustraliaAdapter(ArrayList<AustraliaItem> itemsArrayList) {
+        this.itemsArrayList = itemsArrayList;
+        this.context = context;
+    }
+
+
     public void setFilteredList (ArrayList<AustraliaItem> filteredList){
 
         this.itemsArrayList = filteredList;
         notifyDataSetChanged();
 
     }
-
-    public AustraliaAdapter (ArrayList<AustraliaItem> itemsArrayList) {
-        this.itemsArrayList = itemsArrayList;
-        this.context = context;
-    }
-
     @NonNull
     @Override
     public AustraliaAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

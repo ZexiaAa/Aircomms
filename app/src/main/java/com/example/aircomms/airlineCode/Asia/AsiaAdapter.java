@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.aircomms.R;
+import com.example.aircomms.airlineCode.Africa.AfricaItem;
 
 import java.util.ArrayList;
 
@@ -20,16 +21,14 @@ public class AsiaAdapter extends RecyclerView.Adapter<AsiaAdapter.MyViewHolder> 
     private ArrayList<AsiaItem> itemsArrayList;
 
 
-    public void setFilteredList (ArrayList<AsiaItem> filteredList){
-
-        this.itemsArrayList = filteredList;
-        notifyDataSetChanged();
-
-    }
-
     public AsiaAdapter(ArrayList<AsiaItem> itemsArrayList) {
         this.itemsArrayList = itemsArrayList;
         this.context = context;
+    }
+
+    public void filterList(ArrayList<AsiaItem> filteredList) {
+        itemsArrayList = filteredList;
+        notifyDataSetChanged();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {

@@ -41,21 +41,20 @@
         android:id="@+id/group2"
         android:checkableBehavior="single">
         <item
-            android:id="@+id/drawerSettings"
-            android:title="Settings"
-            android:icon="@drawable/menu_settings"
+            android:id="@+id/drawerAboutUs"
+            android:title="About Us"
+            android:icon="@drawable/aboutus"
+            android:iconTint="@color/black"/>
+        <item
+            android:id="@+id/drawerShare"
+            android:title="Share App"
+            android:icon="@drawable/menu_share"
             android:iconTint="@color/black"/>
         <item
             android:id="@+id/drawerRateApp"
             android:title="Rate App"
             android:icon="@drawable/menu_rate"
             android:iconTint="@color/black"/>
-        <item
-            android:id="@+id/shareApp"
-            android:title="Share App"
-            android:icon="@drawable/menu_share"
-            android:iconTint="@color/black"/>
-
     </group>
     </menu>
     </item>
