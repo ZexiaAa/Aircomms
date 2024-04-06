@@ -30,5 +30,6 @@
     <color name="grayText">#858585</color>
 
     <color name="ripple">#899A9E</color>
-
+    <color name="purple_highlight">#6535B5</color>
+    <color name="cn">#635985</color>
 </resources>

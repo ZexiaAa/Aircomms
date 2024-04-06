@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,9 +7,13 @@
     android:background="@color/bg"
     tools:context=".approach.Arrival.Arrival">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/departureFSHolder"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -20,321 +24,509 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.08" />
+                app:layout_constraintGuide_percent="0.07" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guide2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.9" />
+                app:layout_constraintGuide_percent=".92" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guide3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.47" />
+                app:layout_constraintGuide_percent="0.33" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guide4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.5" />
+                app:layout_constraintGuide_percent="0.68" />
 
-            <TextView
-                android:id="@+id/backAirCode"
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="80dp"
-                android:text="Back"
-                android:textSize="14dp"
-                android:drawablePadding="5dp"
-                android:textColor="@color/tv_black"
-                android:onClick="arrival_back"
-                android:gravity="center_horizontal"
-                android:fontFamily="@font/poppins_regular"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.36" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.29" />
+
+            <TextView
+                android:id="@+id/backMain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_baseline_arrow_back_ios_new_24"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center_horizontal"
+                android:onClick="approachControl_arrival_back"
+                android:text="Back"
+                android:layout_marginTop="80dp"
+                android:textColor="@color/tv_black"
+                android:textSize="14dp"
                 app:layout_constraintStart_toStartOf="@+id/guide1"
                 app:layout_constraintTop_toTopOf="parent"
                 app:navigationContentDescription="Menu" />
 
-
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_semibold"
+                android:fontFamily="@font/poppins_bold"
                 android:text="Arrival"
+                android:textColor="@color/black"
+                android:textSize="24sp"
                 android:layout_marginTop="20dp"
-                android:textColor="@color/tv_black"
-                android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="@+id/guide1"
-                app:layout_constraintTop_toBottomOf="@+id/backAirCode" />
+                app:layout_constraintTop_toBottomOf="@+id/backMain" />
 
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cardView3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                app:cardElevation="5dp"
-                app:rippleColor="@color/ripple"
-                android:layout_marginTop="15dp"
-                app:cardBackgroundColor="@color/ligth_cardView"
-                app:cardCornerRadius="15dp"
-                android:onClick="estimate"
-                app:layout_constraintEnd_toStartOf="@+id/guide2"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/guide1"
-                app:layout_constraintTop_toBottomOf="@+id/textView5">
-
-
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-
-                    <TextView
-                        android:id="@+id/textView18"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="20dp"
-                        android:drawableEnd="@drawable/arrow_right"
-                        android:drawableTint="@color/black"
-                        android:fontFamily="@font/poppins_semibold"
-                        android:justificationMode="inter_word"
-                        android:text="A. Estimates From ACC"
-                        android:onClick="estimates"
-                        android:textColor="@color/black"
-                        android:textSize="14sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cardView5"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                app:cardElevation="5dp"
-                app:rippleColor="@color/ripple"
-                android:layout_marginTop="15dp"
-                app:cardBackgroundColor="@color/ligth_cardView"
-                app:cardCornerRadius="15dp"
-                android:onClick="relay"
-                app:layout_constraintEnd_toStartOf="@+id/guide2"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/guide1"
-                app:layout_constraintTop_toBottomOf="@+id/cardView3">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:animateLayoutChanges="true"
-                    android:orientation="vertical">
-
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="20dp"
-                            android:drawableEnd="@drawable/arrow_right"
-                            android:fontFamily="@font/poppins_semibold"
-                            android:justificationMode="inter_word"
-                            android:text="B. Relay of Estimates to Tower"
-                            android:textColor="@color/black"
-                            android:drawableTint="@color/black"
-                            android:textSize="14sp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-
-                android:id="@+id/cardView4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                app:cardBackgroundColor="@color/ligth_cardView"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="5dp"
-                android:onClick="release"
-                app:layout_constraintEnd_toStartOf="@+id/guide2"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/guide1"
-                app:layout_constraintTop_toBottomOf="@+id/cardView5"
-                app:rippleColor="@color/ripple">
-
-                <LinearLayout
-
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:animateLayoutChanges="true"
-                    android:orientation="vertical">
-
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="20dp"
-                            android:drawableEnd="@drawable/arrow_right"
-                            android:drawableTint="@color/black"
-                            android:fontFamily="@font/poppins_semibold"
-                            android:justificationMode="inter_word"
-                            android:text="C. Release message from ACC"
-                            android:textColor="@color/black"
-                            android:textSize="14sp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-
-                android:id="@+id/cardView6"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20sp"
-                android:onClick="initial"
-                app:cardBackgroundColor="@color/ligth_cardView"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="5dp"
-                app:layout_constraintEnd_toStartOf="@+id/guide2"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/guide1"
-                app:layout_constraintTop_toBottomOf="@+id/cardView4"
-                app:rippleColor="@color/ripple">
-
-                <LinearLayout
-
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:animateLayoutChanges="true"
-                    android:orientation="vertical">
-
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="20dp"
-                            android:drawableEnd="@drawable/arrow_right"
-                            android:drawableTint="@color/black"
-                            android:fontFamily="@font/poppins_semibold"
-                            android:justificationMode="inter_word"
-                            android:text="D. Initial Contact from Arriving Aircraft"
-                            android:textColor="@color/black"
-                            android:textSize="14sp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-
-                android:id="@+id/cardView13"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                app:cardBackgroundColor="@color/ligth_cardView"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="5dp"
-                android:onClick="monitoring"
-                app:layout_constraintEnd_toStartOf="@+id/guide2"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/guide1"
-                app:layout_constraintTop_toBottomOf="@+id/cardView6"
-                app:rippleColor="@color/ripple">
-
-                <LinearLayout
-
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:animateLayoutChanges="true"
-                    android:orientation="vertical">
-
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="20dp"
-                            android:drawableEnd="@drawable/arrow_right"
-                            android:drawableTint="@color/black"
-                            android:fontFamily="@font/poppins_semibold"
-                            android:justificationMode="inter_word"
-                            android:text="E. Monitoring of Aircraft"
-                            android:textColor="@color/black"
-                            android:textSize="14sp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-
-                android:id="@+id/materialCardView"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView_1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:onClick="clearanceh"
-                app:cardBackgroundColor="@color/ligth_cardView"
+                android:onClick="approachControl_arrival_expand1"
                 app:cardCornerRadius="15dp"
-                app:cardElevation="5dp"
+                app:cardElevation="10dp"
+                app:cardBackgroundColor="@color/dark_cardView"
                 app:layout_constraintEnd_toStartOf="@+id/guide2"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/guide1"
-                app:layout_constraintTop_toBottomOf="@+id/cardView13"
-                app:rippleColor="@color/ripple">
+                app:layout_constraintTop_toBottomOf="@+id/textView">
 
                 <LinearLayout
+                    android:id="@+id/departureLayout_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical">
 
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/departureTextView_1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="20dp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="Estimates from ACC"
+                            android:textColor="@color/white"
+                            android:textSize="18dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/departurePlayButton_1"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toTopOf="@+id/list_1"/>
+
+                        <ImageView
+                            android:id="@+id/departurePlayButton_1"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_marginEnd="25dp"
+                            android:src="@drawable/baseline_volume_up_24"
+                            app:layout_constraintTop_toTopOf="@+id/departureTextView_1"
+                            app:layout_constraintBottom_toBottomOf="@id/departureTextView_1"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:tint="@color/white" />
+
+                        <LinearLayout
+                            android:id="@+id/list_1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_marginBottom="20dp"
+                            android:orientation="vertical"
+                            android:visibility="gone"
+                            app:layout_constraintTop_toBottomOf="@+id/departureTextView_1"
+                            app:layout_constraintBottom_toBottomOf="parent">
+
+                            <ProgressBar
+                                android:id="@+id/progressBar_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:layout_marginBottom="10dp"
+                                android:progressTint="@color/white"
+                                android:progressBackgroundTint="#A5A5A5"
+                                style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="ACC:"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/white"
+                                    android:text="Approach, Manila Control, Estimates."
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="ATC APP:"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/white"
+                                    android:text="Control, this is approach, Go ahead estimates."
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="ACC:"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/white"
+                                    android:text="Estimate, United 415, A320, from RPVB, estimates Ilayma at time 0830, FL150."
+                                    android:textSize="14sp" />
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="5dp"
+                                    app:contentPadding="5dp"
+                                    app:cardBackgroundColor="#6535B5"
+                                    app:cardCornerRadius="10dp"
+                                    app:cardElevation="0dp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingHorizontal="10dp"
+                                        android:layout_gravity="center"
+                                        android:fontFamily="@font/poppins_semibold"
+                                        android:textColor="@color/white"
+                                        android:textSize="14sp"
+                                        android:text="United 415"/>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="5dp"
+                                    app:contentPadding="5dp"
+                                    app:cardBackgroundColor="#6535B5"
+                                    app:cardCornerRadius="10dp"
+                                    app:cardElevation="0dp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingHorizontal="10dp"
+                                        android:layout_gravity="center"
+                                        android:fontFamily="@font/poppins_semibold"
+                                        android:textColor="@color/white"
+                                        android:textSize="14sp"
+                                        android:text="A320"/>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="5dp"
+                                    app:contentPadding="5dp"
+                                    app:cardBackgroundColor="#6535B5"
+                                    app:cardCornerRadius="10dp"
+                                    app:cardElevation="0dp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingHorizontal="10dp"
+                                        android:layout_gravity="center"
+                                        android:fontFamily="@font/poppins_semibold"
+                                        android:textColor="@color/white"
+                                        android:textSize="14sp"
+                                        android:text="RPVB"/>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="5dp"
+                                    app:contentPadding="5dp"
+                                    app:cardBackgroundColor="#6535B5"
+                                    app:cardCornerRadius="10dp"
+                                    app:cardElevation="0dp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingHorizontal="10dp"
+                                        android:layout_gravity="center"
+                                        android:fontFamily="@font/poppins_semibold"
+                                        android:textColor="@color/white"
+                                        android:textSize="14sp"
+                                        android:text="Ilayma"/>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="5dp"
+                                    app:contentPadding="5dp"
+                                    app:cardBackgroundColor="#6535B5"
+                                    app:cardCornerRadius="10dp"
+                                    app:cardElevation="0dp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingHorizontal="10dp"
+                                        android:layout_gravity="center"
+                                        android:fontFamily="@font/poppins_semibold"
+                                        android:textColor="@color/white"
+                                        android:textSize="14sp"
+                                        android:text="0830"/>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="5dp"
+                                    app:contentPadding="5dp"
+                                    app:cardBackgroundColor="#6535B5"
+                                    app:cardCornerRadius="10dp"
+                                    app:cardElevation="0dp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingHorizontal="10dp"
+                                        android:layout_gravity="center"
+                                        android:fontFamily="@font/poppins_semibold"
+                                        android:textColor="@color/white"
+                                        android:textSize="14sp"
+                                        android:text="150"/>
+
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="ATC APP:"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/white"
+                                    android:text="Copy that, Bravo Hotel"
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="ACC:"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/white"
+                                    android:text="Zulu Delta"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/white"
+                                    android:text=">\tThen Rundown your estimates from LAIYA to VOR."
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/white"
+                                    android:text=">\tTMA Boundary to VOR is 15 mins (4miles/min)."
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/white"
+                                    android:text=">\tFill out estimates per reporting point."
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/white"
+                                    android:text=">\tUse the given Pseudo TMA."
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="20dp"
+                                android:background="@color/white"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="20dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="Important Notes"
+                                    android:textColor="@color/white"
+                                    android:textSize="18sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/white"
+                                    android:text="- RPLL - is the destination airport (Manila Airport)."
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/white"
+                                    android:text="- To get the estimates per reporting points the formula is:\n\t\tDistance per rep. point / 5."
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/white"
+                                    android:text="- Then, add it on the given time over the first reporting point until to the last."
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView_2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:onClick="approachControl_arrival_expand2"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="10dp"
+                app:cardBackgroundColor="@color/ligth_cardView"
+                app:layout_constraintEnd_toStartOf="@+id/guide2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/guide1"
+                app:layout_constraintTop_toBottomOf="@+id/cardView_1">
+
+                <LinearLayout
+                    android:id="@+id/departureLayout_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:animateLayoutChanges="true"
@@ -347,83 +539,2497 @@
 
 
                         <TextView
-                            android:layout_width="match_parent"
+                            android:id="@+id/departureTextView_2"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="20dp"
-                            android:drawableEnd="@drawable/arrow_right"
-                            android:drawableTint="@color/black"
                             android:fontFamily="@font/poppins_semibold"
-                            android:justificationMode="inter_word"
-                            android:text="F. Clearance for Commencement (ILS)"
+                            android:text="Relay of Estimates to Tower"
                             android:textColor="@color/black"
-                            android:textSize="14sp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
+                            android:textSize="18dp"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintEnd_toStartOf="@+id/departurePlayButton_2"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toTopOf="@+id/list_2" />
+
+                        <ImageView
+                            android:id="@+id/departurePlayButton_2"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_marginEnd="25dp"
+                            android:src="@drawable/baseline_volume_up_24"
+                            app:layout_constraintTop_toTopOf="@+id/departureTextView_2"
+                            app:layout_constraintBottom_toBottomOf="@id/departureTextView_2"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:tint="@color/black" />
+
+                        <LinearLayout
+                            android:id="@+id/list_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_marginBottom="20dp"
+                            android:orientation="vertical"
+                            android:visibility="gone"
+                            app:layout_constraintTop_toBottomOf="@+id/departureTextView_2"
+                            app:layout_constraintBottom_toBottomOf="parent">
+
+                            <ProgressBar
+                                android:id="@+id/progressBar_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:layout_marginBottom="10dp"
+                                android:progressTint="@color/black"
+                                android:progressBackgroundTint="#656565"
+                                style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="ATC APP:"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/black"
+                                    android:text="Tower, Approach"
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="TWR:"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/black"
+                                    android:text="Approach, this is Tower, Go Ahead"
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="ATC APP:"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/black"
+                                    android:text="Arrival estimate, United 415 an Airbus 320 from RPVB, estimates Manila VOR at 0843, your control on final."
+                                    android:textSize="14sp" />
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="5dp"
+                                    app:contentPadding="5dp"
+                                    app:cardBackgroundColor="#6535B5"
+                                    app:cardCornerRadius="10dp"
+                                    app:cardElevation="0dp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingHorizontal="10dp"
+                                        android:layout_gravity="center"
+                                        android:fontFamily="@font/poppins_semibold"
+                                        android:textColor="@color/white"
+                                        android:textSize="14sp"
+                                        android:text="0843"/>
+
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="TWR:"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/black"
+                                    android:text="Alpha Charlie"
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="ATC APP:"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/black"
+                                    android:text="Bravo Hotel"
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="20dp"
+                                android:background="@color/black"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="20dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="Important Notes"
+                                    android:textColor="@color/black"
+                                    android:textSize="18sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/black"
+                                    android:text="- In this case, 0830 is the given time over the first reporting point, we get the 36 over palig using the formula."
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/black"
+                                    android:text="- If the answer is not a whole number, you always have to make it whole number, so round-up is a must."
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
 
-            <com.google.android.material.card.MaterialCardView
-
-                android:id="@+id/materialCardVi"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView_3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:onClick="coordination"
-                app:cardBackgroundColor="@color/ligth_cardView"
+                android:onClick="approachControl_arrival_expand3"
                 app:cardCornerRadius="15dp"
-                app:cardElevation="5dp"
-                android:layout_marginBottom="20dp"
+                app:cardElevation="10dp"
+                app:cardBackgroundColor="@color/dark_cardView"
+                app:layout_constraintEnd_toStartOf="@+id/guide2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/guide1"
+                app:layout_constraintTop_toBottomOf="@+id/cardView_2">
+
+                <LinearLayout
+                    android:id="@+id/departureLayout_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <TextView
+                            android:id="@+id/departureTextView_3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="20dp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="Release Message from ACC"
+                            android:textColor="@color/white"
+                            android:textSize="18dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/departurePlayButton_3"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toTopOf="@+id/list_3" />
+
+                        <ImageView
+                            android:id="@+id/departurePlayButton_3"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_marginEnd="25dp"
+                            android:src="@drawable/baseline_volume_up_24"
+                            app:layout_constraintTop_toTopOf="@+id/departureTextView_3"
+                            app:layout_constraintBottom_toBottomOf="@id/departureTextView_3"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:tint="@color/white" />
+
+                        <LinearLayout
+                            android:id="@+id/list_3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_marginBottom="20dp"
+                            android:orientation="vertical"
+                            android:visibility="gone"
+                            app:layout_constraintTop_toBottomOf="@+id/departureTextView_3"
+                            app:layout_constraintBottom_toBottomOf="parent">
+
+                            <ProgressBar
+                                android:id="@+id/progressBar_3"
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:layout_marginBottom="10dp"
+                                android:progressTint="@color/white"
+                                android:progressBackgroundTint="#A5A5A5"
+                                style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="ACC:"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/white"
+                                    android:text="Approach, Control, release"
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="ATC APP:"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/white"
+                                    android:text="Control, Approach, Go ahead."
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="ACC:"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/white"
+                                    android:text="Estimate, United 415, descending FL150, approaching ilayma, Release."
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="ATC APP:"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/white"
+                                    android:text="Bravo Hotel"
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="ACC:"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/white"
+                                    android:text="Zulu Delta"
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="20dp"
+                                android:background="@color/white"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="20dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="Important Notes"
+                                    android:textColor="@color/white"
+                                    android:textSize="18sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/white"
+                                    android:text="- Once the ACC releases the aircraft to you, as an Approach Controller, you have to record the time of release, in this case the 25 is the time of release message (in minutes)."
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView_4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:onClick="approachControl_arrival_expand4"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="10dp"
+                app:cardBackgroundColor="@color/ligth_cardView"
+                app:layout_constraintEnd_toStartOf="@+id/guide2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/guide1"
+                app:layout_constraintTop_toBottomOf="@+id/cardView_3">
+
+                <LinearLayout
+                    android:id="@+id/departureLayout_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <TextView
+                            android:id="@+id/departureTextView_4"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="20dp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="Initial Contact from Arriving Aircraft"
+                            android:textColor="@color/black"
+                            android:textSize="18dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/departurePlayButton_4"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toTopOf="@+id/list_4" />
+
+                        <ImageView
+                            android:id="@+id/departurePlayButton_4"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_marginEnd="25dp"
+                            android:src="@drawable/baseline_volume_up_24"
+                            app:layout_constraintTop_toTopOf="@+id/departureTextView_4"
+                            app:layout_constraintBottom_toBottomOf="@id/departureTextView_4"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:tint="@color/black" />
+
+                        <LinearLayout
+                            android:id="@+id/list_4"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_marginBottom="20dp"
+                            android:orientation="vertical"
+                            android:visibility="gone"
+                            app:layout_constraintTop_toBottomOf="@+id/departureTextView_4"
+                            app:layout_constraintBottom_toBottomOf="parent">
+
+                            <ProgressBar
+                                android:id="@+id/progressBar_4"
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:layout_marginBottom="10dp"
+                                android:progressTint="@color/black"
+                                android:progressBackgroundTint="#656565"
+                                style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="UAL415:"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/black"
+                                    android:text="Approach, United 415, over Ilayma, Passing FL200 for FL 150."
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="ATC APP:"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/black"
+                                    android:text="United 415, Manila Approach, Proceed Manila VOR via ilayma, Palig, Morac, expect ILS Approach RWY 06, QNH 1010, descend 110."
+                                    android:textSize="14sp" />
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="5dp"
+                                    app:contentPadding="5dp"
+                                    app:cardBackgroundColor="#6535B5"
+                                    app:cardCornerRadius="10dp"
+                                    app:cardElevation="0dp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingHorizontal="10dp"
+                                        android:layout_gravity="center"
+                                        android:fontFamily="@font/poppins_semibold"
+                                        android:textColor="@color/white"
+                                        android:textSize="14sp"
+                                        android:text="ILS Approach RWY 06"/>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="5dp"
+                                    app:contentPadding="5dp"
+                                    app:cardBackgroundColor="#6535B5"
+                                    app:cardCornerRadius="10dp"
+                                    app:cardElevation="0dp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingHorizontal="10dp"
+                                        android:layout_gravity="center"
+                                        android:fontFamily="@font/poppins_semibold"
+                                        android:textColor="@color/white"
+                                        android:textSize="14sp"
+                                        android:text="110"/>
+
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="UAL415:"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/black"
+                                    android:text="Roger. To proceed Manila VOR via ilayma, Palig, Morac, expect ILS Approach runway 06, QNH1010, descend 110."
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="ATC APP:"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/black"
+                                    android:text="Report over Palig."
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="UAL415:"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/black"
+                                    android:text="Wilco."
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="20dp"
+                                android:background="@color/black"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="20dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="Important Notes"
+                                    android:textColor="@color/black"
+                                    android:textSize="18sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/black"
+                                    android:text="- Be mindful of time when the pilot/aircraft initiate a contact with you. In this situation, 29 is the time when the Aircraft called."
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView_5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:onClick="approachControl_arrival_expand5"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="10dp"
+                app:cardBackgroundColor="@color/dark_cardView"
+                app:layout_constraintEnd_toStartOf="@+id/guide2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/guide1"
+                app:layout_constraintTop_toBottomOf="@+id/cardView_4">
+
+                <LinearLayout
+                    android:id="@+id/departureLayout_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <TextView
+                            android:id="@+id/departureTextView_5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="20dp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="Monitoring of Aircraft"
+                            android:textColor="@color/white"
+                            android:textSize="18dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/departurePlayButton_5"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toTopOf="@+id/list_5" />
+
+                        <ImageView
+                            android:id="@+id/departurePlayButton_5"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_marginEnd="25dp"
+                            android:src="@drawable/baseline_volume_up_24"
+                            app:layout_constraintTop_toTopOf="@+id/departureTextView_5"
+                            app:layout_constraintBottom_toBottomOf="@id/departureTextView_5"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:tint="@color/white" />
+
+                        <LinearLayout
+                            android:id="@+id/list_5"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_marginBottom="20dp"
+                            android:orientation="vertical"
+                            android:visibility="gone"
+                            app:layout_constraintTop_toBottomOf="@+id/departureTextView_5"
+                            app:layout_constraintBottom_toBottomOf="parent">
+
+                            <ProgressBar
+                                android:id="@+id/progressBar_5"
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:layout_marginBottom="10dp"
+                                android:progressTint="@color/white"
+                                android:progressBackgroundTint="#A5A5A5"
+                                style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="ATC APP:"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/white"
+                                    android:text="Report over Palig."
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="UAL415:"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/white"
+                                    android:text="Wilco."
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="UAL415:"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/white"
+                                    android:text="Approach, united 415, now over Palig"
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="ATC APP:"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/white"
+                                    android:text="Roger. Report over Morac."
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="UAL415:"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/white"
+                                    android:text="Will report over Morac, united 415"
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="20dp"
+                                android:background="@color/white"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="20dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="Important Notes"
+                                    android:textColor="@color/white"
+                                    android:textSize="18sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/white"
+                                    android:text="- When aircraft reports its position over reporting point, fill in the appropriate boxes (Actual Time Over reporting point)."
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/white"
+                                    android:text="- When aircraft is cleared of traffic, descend to a lower altitude subject to your departing traffic."
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView_6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:onClick="approachControl_arrival_expand6"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="10dp"
+                app:cardBackgroundColor="@color/ligth_cardView"
+                app:layout_constraintEnd_toStartOf="@+id/guide2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/guide1"
+                app:layout_constraintTop_toBottomOf="@+id/cardView_5">
+
+                <LinearLayout
+                    android:id="@+id/departureLayout_6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <TextView
+                            android:id="@+id/departureTextView_6"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="20dp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="Clearance for Commencement for ILS Approach"
+                            android:textColor="@color/black"
+                            android:textSize="18dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/departurePlayButton_6"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toTopOf="@+id/list_6" />
+
+                        <ImageView
+                            android:id="@+id/departurePlayButton_6"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_marginEnd="25dp"
+                            android:src="@drawable/baseline_volume_up_24"
+                            app:layout_constraintTop_toTopOf="@+id/departureTextView_6"
+                            app:layout_constraintBottom_toBottomOf="@id/departureTextView_6"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:tint="@color/black" />
+
+                        <LinearLayout
+                            android:id="@+id/list_6"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_marginBottom="20dp"
+                            android:orientation="vertical"
+                            android:visibility="gone"
+                            app:layout_constraintTop_toBottomOf="@+id/departureTextView_6"
+                            app:layout_constraintBottom_toBottomOf="parent">
+
+                            <ProgressBar
+                                android:id="@+id/progressBar_6"
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:layout_marginBottom="10dp"
+                                android:progressTint="@color/black"
+                                android:progressBackgroundTint="#656565"
+                                style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="UAL415:"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/black"
+                                    android:text="Approach, United 415 just passed Morac a minute ago"
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="ATC APP:"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/black"
+                                    android:text="United 415, descend 6000, cleared ILS Approach runway 06. Report commencing over the VOR at 6000."
+                                    android:textSize="14sp" />
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="5dp"
+                                    app:contentPadding="5dp"
+                                    app:cardBackgroundColor="#6535B5"
+                                    app:cardCornerRadius="10dp"
+                                    app:cardElevation="0dp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingHorizontal="10dp"
+                                        android:layout_gravity="center"
+                                        android:fontFamily="@font/poppins_semibold"
+                                        android:textColor="@color/white"
+                                        android:textSize="14sp"
+                                        android:text="6000"/>
+
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="UAL415:"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/black"
+                                    android:text="Roger. will Descend 6000, cleared ILS Approach Runway 06. Will Commence over the VOR at 6000"
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="UAL415:"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/black"
+                                    android:text="Approach, united 415, commencing over the VOR."
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="ATC APP:"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/black"
+                                    android:text="Roger, report turning base"
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="UAL415:"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/black"
+                                    android:text="Will report turning base, united 415"
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="20dp"
+                                android:background="@color/black"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="20dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="Important Notes"
+                                    android:textColor="@color/black"
+                                    android:textSize="18sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/black"
+                                    android:text="- 41 (1st Box) – is the time (in minutes) when approach clearance is given. (Cleared ILS approach)."
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/black"
+                                    android:text="- 41 (2nd Box, Top Row) - is the actual time over the VOR."
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/black"
+                                    android:text="- 41 (2nd Box, Bottom Row) – is the time when the aircraft reported commencing over the VOR. Basically just same with the actual time over the VOR."
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView_7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:onClick="approachControl_arrival_expand7"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="10dp"
+                app:cardBackgroundColor="@color/dark_cardView"
+                app:layout_constraintEnd_toStartOf="@+id/guide2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/guide1"
+                app:layout_constraintTop_toBottomOf="@+id/cardView_6">
+
+                <LinearLayout
+                    android:id="@+id/departureLayout_7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <TextView
+                            android:id="@+id/departureTextView_7"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="20dp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="Coordination with TWR"
+                            android:textColor="@color/white"
+                            android:textSize="18dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/departurePlayButton_7"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toTopOf="@+id/list_7" />
+
+                        <ImageView
+                            android:id="@+id/departurePlayButton_7"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_marginEnd="25dp"
+                            android:src="@drawable/baseline_volume_up_24"
+                            app:layout_constraintTop_toTopOf="@+id/departureTextView_7"
+                            app:layout_constraintBottom_toBottomOf="@id/departureTextView_7"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:tint="@color/white" />
+
+                        <LinearLayout
+                            android:id="@+id/list_7"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_marginBottom="20dp"
+                            android:orientation="vertical"
+                            android:visibility="gone"
+                            app:layout_constraintTop_toBottomOf="@+id/departureTextView_7"
+                            app:layout_constraintBottom_toBottomOf="parent">
+
+                            <ProgressBar
+                                android:id="@+id/progressBar_7"
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:layout_marginBottom="10dp"
+                                android:progressTint="@color/white"
+                                android:progressBackgroundTint="#A5A5A5"
+                                style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="ATC APP:"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/white"
+                                    android:text="Tower, this is Approach, United 415 commencing over the VOR your control on final."
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="TWR:"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/white"
+                                    android:text="Alpha Charlie"
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="ATC APP:"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/white"
+                                    android:text="Bravo Hotel"
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="UAL415:"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/white"
+                                    android:text="Approach, united 415, now turning base."
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="ATC APP:"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/white"
+                                    android:text="United 415, report on final."
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="UAL415:"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/white"
+                                    android:text="Will report on final United 415"
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="UAL415:"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/white"
+                                    android:text="Approach, united 415, now on final."
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="ATC APP:"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/white"
+                                    android:text="United 415, roger, contact Tower at 118.1."
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="UAL415:"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/white"
+                                    android:text="Switching 118.1, good day!"
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="20dp"
+                                android:background="@color/white"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="20dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="Important Notes"
+                                    android:textColor="@color/white"
+                                    android:textSize="18sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/white"
+                                    android:text="- 0842 – is the actual time when approach transfer the control to tower."
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/white"
+                                    android:text="- 0842 (42 on 3rd Box, Top Row) – is the actual time aircraft reported on base turn."
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/white"
+                                    android:text="- 0843 (43 on 3rd Box, Bottom Row) – is the actual time when the aircraft reported on final."
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:justificationMode="inter_word"
+                                    android:textColor="@color/white"
+                                    android:text="- Remember that actual time, may vary depends on the time that the aircraft/pilot initiate a contact with you."
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="50dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/guide2"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/guide1"
-                app:layout_constraintTop_toBottomOf="@+id/materialCardView"
-                app:rippleColor="@color/ripple">
+                app:layout_constraintTop_toBottomOf="@+id/cardView_7"/>
 
-                <LinearLayout
-
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:animateLayoutChanges="true"
-                    android:orientation="vertical">
-
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="20dp"
-                            android:drawableEnd="@drawable/arrow_right"
-                            android:drawableTint="@color/black"
-                            android:fontFamily="@font/poppins_semibold"
-                            android:justificationMode="inter_word"
-                            android:text="G. Coordination with tower"
-                            android:textColor="@color/black"
-                            android:textSize="14sp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.6"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.925" />
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/departureFSHolder"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:cardBackgroundColor="@color/bg"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="20dp">
+
+        <LinearLayout
+            android:id="@+id/departureFSLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:animateLayoutChanges="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/departureFSContent"/>
+
+                <LinearLayout
+                    android:id="@+id/departureFSContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:scrollbars="none"
+                        android:overScrollMode="never">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingHorizontal="20dp">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:cardElevation="0dp"
+                                app:cardBackgroundColor="@color/black"
+                                app:cardCornerRadius="20dp">
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="1dp"
+                                    app:cardElevation="0dp"
+                                    app:cardBackgroundColor="@color/white"
+                                    app:cardCornerRadius="19dp">
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <androidx.constraintlayout.widget.ConstraintLayout
+                                            android:layout_width="240dp"
+                                            android:layout_height="240dp"
+                                            android:background="@color/white">
+
+                                            <View
+                                                android:layout_width="350dp"
+                                                android:layout_height="1dp"
+                                                android:rotation="-45"
+                                                android:background="@color/black"
+                                                app:layout_constraintBottom_toBottomOf="parent"
+                                                app:layout_constraintStart_toStartOf="parent"
+                                                app:layout_constraintEnd_toEndOf="parent"/>
+
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:orientation="vertical">
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_margin="20dp"
+                                                    android:text="UAL 415"
+                                                    android:textAlignment="center"
+                                                    android:textColor="@color/black"
+                                                    android:textSize="24sp"
+                                                    android:fontFamily="@font/poppins_regular"/>
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginHorizontal="20dp"
+                                                    android:text="A320"
+                                                    android:textAlignment="textStart"
+                                                    android:textColor="@color/black"
+                                                    android:textSize="20sp"
+                                                    android:fontFamily="@font/poppins_regular"/>
+
+                                                <LinearLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="40dp"
+                                                    android:orientation="horizontal">
+
+                                                    <TextView
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginHorizontal="20dp"
+                                                        android:text="RPV8"
+                                                        android:textAlignment="textStart"
+                                                        android:textColor="@color/black"
+                                                        android:textSize="20sp"
+                                                        android:fontFamily="@font/poppins_regular"/>
+
+                                                    <TextView
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginEnd="80dp"
+                                                        android:text="RPLL"
+                                                        android:textAlignment="textEnd"
+                                                        android:textColor="@color/black"
+                                                        android:textSize="20sp"
+                                                        android:fontFamily="@font/poppins_regular"/>
+
+                                                </LinearLayout>
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent"
+                                                    android:layout_marginEnd="25dp"
+                                                    android:gravity="center_vertical|end"
+                                                    android:text="VR"
+                                                    android:textColor="@color/black"
+                                                    android:textSize="20sp"
+                                                    android:fontFamily="@font/poppins_regular"/>
+
+                                            </LinearLayout>
+
+                                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                        <View
+                                            android:layout_width="1dp"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/black"/>
+
+                                        <androidx.constraintlayout.widget.ConstraintLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="240dp"
+                                            android:background="@color/white">
+
+                                            <LinearLayout
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_margin="50dp"
+                                                android:orientation="horizontal"
+                                                app:layout_constraintStart_toStartOf="parent"
+                                                app:layout_constraintEnd_toEndOf="parent"
+                                                app:layout_constraintTop_toTopOf="parent"
+                                                app:layout_constraintBottom_toBottomOf="parent">
+
+                                                <TextView
+                                                    android:id="@+id/flightStripContentAR_1"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginVertical="10dp"
+                                                    android:text="08"
+                                                    android:textColor="@color/black"
+                                                    android:textSize="24sp"
+                                                    android:fontFamily="@font/poppins_regular"/>
+
+                                                <TextView
+                                                    android:id="@+id/flightStripContentAR_2"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="match_parent"
+                                                    android:layout_marginStart="5dp"
+                                                    android:text="43"
+                                                    android:textColor="@color/black"
+                                                    android:textSize="16sp"
+                                                    android:fontFamily="@font/poppins_regular"/>
+
+                                            </LinearLayout>
+
+                                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                        <View
+                                            android:layout_width="1dp"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/black"/>
+
+                                        <androidx.constraintlayout.widget.ConstraintLayout
+                                            android:layout_width="240dp"
+                                            android:layout_height="240dp"
+                                            android:background="@color/white">
+
+                                            <View
+                                                android:layout_width="350dp"
+                                                android:layout_height="1dp"
+                                                android:rotation="-45"
+                                                android:background="@color/black"
+                                                app:layout_constraintBottom_toBottomOf="parent"
+                                                app:layout_constraintStart_toStartOf="parent"
+                                                app:layout_constraintEnd_toEndOf="parent"/>
+
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:orientation="vertical">
+
+                                                <TextView
+                                                    android:id="@+id/flightStripContentAR_3"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="30dp"
+                                                    android:layout_marginStart="30dp"
+                                                    android:text="150"
+                                                    android:textColor="@color/black"
+                                                    android:textSize="20sp"
+                                                    android:fontFamily="@font/poppins_regular"/>
+
+                                                <TextView
+                                                    android:id="@+id/flightStripContentAR_4"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="10dp"
+                                                    android:layout_marginStart="30dp"
+                                                    android:text="110"
+                                                    android:textColor="@color/black"
+                                                    android:textSize="20sp"
+                                                    android:fontFamily="@font/poppins_regular"/>
+
+                                                <TextView
+                                                    android:id="@+id/flightStripContentAR_5"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="10dp"
+                                                    android:layout_marginStart="30dp"
+                                                    android:text="6000"
+                                                    android:textColor="@color/black"
+                                                    android:textSize="20sp"
+                                                    android:fontFamily="@font/poppins_regular"/>
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent"
+                                                    android:layout_margin="5dp"
+                                                    android:gravity="bottom|end"
+                                                    android:text="Ilayma"
+                                                    android:textColor="@color/black"
+                                                    android:textSize="20sp"
+                                                    android:fontFamily="@font/poppins_regular"/>
+
+                                            </LinearLayout>
+
+                                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                        <View
+                                            android:layout_width="1dp"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/black"/>
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="240dp"
+                                            android:orientation="vertical"
+                                            android:background="@color/white">
+
+                                            <LinearLayout
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="120dp"
+                                                android:orientation="horizontal">
+
+                                                <androidx.constraintlayout.widget.ConstraintLayout
+                                                    android:layout_width="120dp"
+                                                    android:layout_height="120dp">
+
+                                                    <View
+                                                        android:layout_width="180dp"
+                                                        android:layout_height="1dp"
+                                                        android:rotation="-45"
+                                                        android:background="@color/black"
+                                                        app:layout_constraintTop_toTopOf="parent"
+                                                        app:layout_constraintBottom_toBottomOf="parent"
+                                                        app:layout_constraintStart_toStartOf="parent"
+                                                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="match_parent"
+                                                        android:orientation="vertical">
+
+                                                        <TextView
+                                                            android:id="@+id/flightStripContentAR_6"
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_margin="10dp"
+                                                            android:text="25"
+                                                            android:textColor="@color/black"
+                                                            android:textSize="20sp"
+                                                            android:fontFamily="@font/poppins_regular"/>
+
+                                                        <TextView
+                                                            android:id="@+id/flightStripContentAR_7"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="match_parent"
+                                                            android:layout_margin="10dp"
+                                                            android:gravity="bottom|end"
+                                                            android:text="29"
+                                                            android:textColor="@color/black"
+                                                            android:textSize="20sp"
+                                                            android:fontFamily="@font/poppins_regular"/>
+
+                                                    </LinearLayout>
+
+                                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                                <View
+                                                    android:layout_width="1dp"
+                                                    android:layout_height="match_parent"
+                                                    android:background="@color/black"/>
+
+                                                <androidx.constraintlayout.widget.ConstraintLayout
+                                                    android:layout_width="120dp"
+                                                    android:layout_height="120dp">
+
+                                                    <View
+                                                        android:layout_width="180dp"
+                                                        android:layout_height="1dp"
+                                                        android:rotation="-45"
+                                                        android:background="@color/black"
+                                                        app:layout_constraintTop_toTopOf="parent"
+                                                        app:layout_constraintBottom_toBottomOf="parent"
+                                                        app:layout_constraintStart_toStartOf="parent"
+                                                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="match_parent"
+                                                        android:orientation="vertical">
+
+                                                        <TextView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_margin="10dp"
+                                                            android:text="0830"
+                                                            android:textColor="@color/black"
+                                                            android:textSize="20sp"
+                                                            android:fontFamily="@font/poppins_regular"/>
+
+                                                        <TextView
+                                                            android:id="@+id/flightStripContentAR_8"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="match_parent"
+                                                            android:layout_margin="10dp"
+                                                            android:gravity="bottom|end"
+                                                            android:text="30"
+                                                            android:textColor="@color/black"
+                                                            android:textSize="20sp"
+                                                            android:fontFamily="@font/poppins_regular"/>
+
+                                                    </LinearLayout>
+
+                                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                                <View
+                                                    android:layout_width="1dp"
+                                                    android:layout_height="match_parent"
+                                                    android:background="@color/black"/>
+
+                                                <androidx.constraintlayout.widget.ConstraintLayout
+                                                    android:layout_width="120dp"
+                                                    android:layout_height="120dp">
+
+                                                    <View
+                                                        android:layout_width="180dp"
+                                                        android:layout_height="1dp"
+                                                        android:rotation="-45"
+                                                        android:background="@color/black"
+                                                        app:layout_constraintTop_toTopOf="parent"
+                                                        app:layout_constraintBottom_toBottomOf="parent"
+                                                        app:layout_constraintStart_toStartOf="parent"
+                                                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                                                    <View
+                                                        android:layout_width="170dp"
+                                                        android:layout_height="1dp"
+                                                        android:rotation="45"
+                                                        android:background="@color/black"
+                                                        app:layout_constraintStart_toEndOf="parent"
+                                                        app:layout_constraintBottom_toBottomOf="parent"
+                                                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="match_parent"
+                                                        android:orientation="vertical">
+
+                                                        <TextView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_marginTop="10dp"
+                                                            android:layout_marginStart="10dp"
+                                                            android:text="Palig"
+                                                            android:textColor="@color/black"
+                                                            android:textSize="20sp"
+                                                            android:fontFamily="@font/poppins_regular"/>
+
+                                                        <TextView
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_marginEnd="10dp"
+                                                            android:gravity="end"
+                                                            android:text="36"
+                                                            android:textColor="@color/black"
+                                                            android:textSize="20sp"
+                                                            android:fontFamily="@font/poppins_regular"/>
+
+                                                        <TextView
+                                                            android:id="@+id/flightStripContentAR_9"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="match_parent"
+                                                            android:layout_marginBottom="10dp"
+                                                            android:layout_marginHorizontal="10dp"
+                                                            android:gravity="bottom|center_horizontal"
+                                                            android:text="36"
+                                                            android:textColor="@color/black"
+                                                            android:textSize="20sp"
+                                                            android:fontFamily="@font/poppins_regular"/>
+
+                                                    </LinearLayout>
+
+                                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                                <View
+                                                    android:layout_width="1dp"
+                                                    android:layout_height="match_parent"
+                                                    android:background="@color/black"/>
+
+                                                <androidx.constraintlayout.widget.ConstraintLayout
+                                                    android:layout_width="120dp"
+                                                    android:layout_height="120dp">
+
+                                                    <View
+                                                        android:layout_width="180dp"
+                                                        android:layout_height="1dp"
+                                                        android:rotation="-45"
+                                                        android:background="@color/black"
+                                                        app:layout_constraintTop_toTopOf="parent"
+                                                        app:layout_constraintBottom_toBottomOf="parent"
+                                                        app:layout_constraintStart_toStartOf="parent"
+                                                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                                                    <View
+                                                        android:layout_width="170dp"
+                                                        android:layout_height="1dp"
+                                                        android:rotation="45"
+                                                        android:background="@color/black"
+                                                        app:layout_constraintStart_toEndOf="parent"
+                                                        app:layout_constraintBottom_toBottomOf="parent"
+                                                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="match_parent"
+                                                        android:orientation="vertical">
+
+                                                        <TextView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_marginTop="10dp"
+                                                            android:layout_marginStart="10dp"
+                                                            android:text="Morac"
+                                                            android:textColor="@color/black"
+                                                            android:textSize="20sp"
+                                                            android:fontFamily="@font/poppins_regular"/>
+
+                                                        <TextView
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_marginEnd="10dp"
+                                                            android:gravity="end"
+                                                            android:text="40"
+                                                            android:textColor="@color/black"
+                                                            android:textSize="20sp"
+                                                            android:fontFamily="@font/poppins_regular"/>
+
+                                                        <TextView
+                                                            android:id="@+id/flightStripContentAR_10"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="match_parent"
+                                                            android:layout_marginBottom="10dp"
+                                                            android:layout_marginHorizontal="10dp"
+                                                            android:gravity="bottom|center_horizontal"
+                                                            android:text="40"
+                                                            android:textColor="@color/black"
+                                                            android:textSize="20sp"
+                                                            android:fontFamily="@font/poppins_regular"/>
+
+                                                    </LinearLayout>
+
+                                                </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    </LinearLayout>
+                                            </LinearLayout>
 
-</ScrollView>
+                                            <View
+                                                android:layout_width="match_parent"
+                                                android:layout_height="1dp"
+                                                android:background="@color/black"/>
+
+                                            <LinearLayout
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="120dp"
+                                                android:orientation="horizontal">
+
+                                                <androidx.constraintlayout.widget.ConstraintLayout
+                                                    android:layout_width="120dp"
+                                                    android:layout_height="120dp">
+
+                                                    <TextView
+                                                        android:id="@+id/flightStripContentAR_11"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="match_parent"
+                                                        android:gravity="center"
+                                                        android:text="41"
+                                                        android:textColor="@color/black"
+                                                        android:textSize="20sp"
+                                                        android:fontFamily="@font/poppins_regular"/>
+
+                                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                                <View
+                                                    android:layout_width="1dp"
+                                                    android:layout_height="match_parent"
+                                                    android:background="@color/black"/>
+
+                                                <androidx.constraintlayout.widget.ConstraintLayout
+                                                    android:layout_width="120dp"
+                                                    android:layout_height="120dp">
+
+                                                    <View
+                                                        android:layout_width="180dp"
+                                                        android:layout_height="1dp"
+                                                        android:rotation="-45"
+                                                        android:background="@color/black"
+                                                        app:layout_constraintTop_toTopOf="parent"
+                                                        app:layout_constraintBottom_toBottomOf="parent"
+                                                        app:layout_constraintStart_toStartOf="parent"
+                                                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="match_parent"
+                                                        android:orientation="vertical">
+
+                                                        <TextView
+                                                            android:id="@+id/flightStripContentAR_12"
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_margin="10dp"
+                                                            android:text="41"
+                                                            android:textColor="@color/black"
+                                                            android:textSize="20sp"
+                                                            android:fontFamily="@font/poppins_regular"/>
+
+                                                        <TextView
+                                                            android:id="@+id/flightStripContentAR_13"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="match_parent"
+                                                            android:layout_margin="10dp"
+                                                            android:gravity="bottom|end"
+                                                            android:text="41"
+                                                            android:textColor="@color/black"
+                                                            android:textSize="20sp"
+                                                            android:fontFamily="@font/poppins_regular"/>
+
+                                                    </LinearLayout>
+
+                                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                                <View
+                                                    android:layout_width="1dp"
+                                                    android:layout_height="match_parent"
+                                                    android:background="@color/black"/>
+
+                                                <androidx.constraintlayout.widget.ConstraintLayout
+                                                    android:layout_width="120dp"
+                                                    android:layout_height="120dp">
+
+                                                    <View
+                                                        android:layout_width="180dp"
+                                                        android:layout_height="1dp"
+                                                        android:rotation="-45"
+                                                        android:background="@color/black"
+                                                        app:layout_constraintTop_toTopOf="parent"
+                                                        app:layout_constraintBottom_toBottomOf="parent"
+                                                        app:layout_constraintStart_toStartOf="parent"
+                                                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="match_parent"
+                                                        android:orientation="vertical">
+
+                                                        <TextView
+                                                            android:id="@+id/flightStripContentAR_14"
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_margin="10dp"
+                                                            android:text="42"
+                                                            android:textColor="@color/black"
+                                                            android:textSize="20sp"
+                                                            android:fontFamily="@font/poppins_regular"/>
+
+                                                        <TextView
+                                                            android:id="@+id/flightStripContentAR_15"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="match_parent"
+                                                            android:layout_margin="10dp"
+                                                            android:gravity="bottom|end"
+                                                            android:text="43"
+                                                            android:textColor="@color/black"
+                                                            android:textSize="20sp"
+                                                            android:fontFamily="@font/poppins_regular"/>
+
+                                                    </LinearLayout>
+
+                                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                                <View
+                                                    android:layout_width="1dp"
+                                                    android:layout_height="match_parent"
+                                                    android:background="@color/black"/>
+
+                                                <androidx.constraintlayout.widget.ConstraintLayout
+                                                    android:layout_width="120dp"
+                                                    android:layout_height="120dp">
+
+                                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                            </LinearLayout>
+
+                                        </LinearLayout>
+
+                                        <View
+                                            android:layout_width="1dp"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/black"/>
+
+                                        <androidx.constraintlayout.widget.ConstraintLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="240dp"
+                                            android:background="@color/white">
+
+                                            <TextView
+                                                android:id="@+id/flightStripContentAR_16"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_margin="50dp"
+                                                android:gravity="center"
+                                                android:text="ILS 06"
+                                                android:textColor="@color/black"
+                                                android:textSize="24sp"
+                                                android:fontFamily="@font/poppins_regular"
+                                                app:layout_constraintStart_toStartOf="parent"
+                                                app:layout_constraintEnd_toEndOf="parent"
+                                                app:layout_constraintTop_toTopOf="parent"
+                                                app:layout_constraintBottom_toBottomOf="parent"/>
+
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="horizontal"
+                                                app:layout_constraintBottom_toBottomOf="parent"
+                                                app:layout_constraintStart_toStartOf="parent">
+
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_margin="20dp"
+                                                    android:gravity="bottom|end"
+                                                    android:text="Z"
+                                                    android:textColor="@color/black"
+                                                    android:textSize="20sp"
+                                                    android:fontFamily="@font/poppins_regular"/>
+
+                                                <TextView
+                                                    android:id="@+id/flightStripContentAR_17"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginVertical="20dp"
+                                                    android:layout_marginEnd="20dp"
+                                                    android:gravity="bottom|end"
+                                                    android:text="0842"
+                                                    android:textColor="@color/black"
+                                                    android:textSize="20sp"
+                                                    android:fontFamily="@font/poppins_regular"/>
+
+                                            </LinearLayout>
+
+                                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                            </androidx.cardview.widget.CardView>
+
+                        </LinearLayout>
+
+                    </HorizontalScrollView>
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:onClick="approachControl_arrival_flightStrip"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="20dp"
+        app:cardBackgroundColor="@color/dark_cardView"
+        app:layout_constraintTop_toTopOf="@+id/departureFSHolder"
+        app:layout_constraintBottom_toTopOf="@+id/departureFSHolder"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="5dp"
+                android:layout_gravity="center_vertical"
+                android:elevation="8dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:justificationMode="inter_word"
+                android:textColor="@color/white"
+                android:text="Flight Strip"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginVertical="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/airplane"
+                app:tint="@color/white"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:onClick="approachControl_arrival_pseudoTMA"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="20dp"
+        app:cardBackgroundColor="#6535B5"
+        app:layout_constraintTop_toTopOf="@+id/departureFSHolder"
+        app:layout_constraintBottom_toTopOf="@+id/departureFSHolder"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="5dp"
+                android:layout_gravity="center_vertical"
+                android:elevation="8dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:justificationMode="inter_word"
+                android:textColor="@color/white"
+                android:text="Pseudo TMA"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/acc"
+                app:tint="@color/white"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

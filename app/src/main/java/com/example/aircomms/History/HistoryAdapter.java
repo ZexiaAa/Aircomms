@@ -38,19 +38,11 @@ import com.example.aircomms.airportCode.North.Airport_North;
 import com.example.aircomms.airportCode.South.Airport_South;
 import com.example.aircomms.approach.ApproachControl;
 import com.example.aircomms.approach.Arrival.Arrival;
-import com.example.aircomms.approach.Arrival.ArrivalClearance;
-import com.example.aircomms.approach.Arrival.ArrivalCoordination;
-import com.example.aircomms.approach.Arrival.ArrivalEstimate;
-import com.example.aircomms.approach.Arrival.ArrivalInitial;
-import com.example.aircomms.approach.Arrival.ArrivalMonitoring;
-import com.example.aircomms.approach.Arrival.ArrivalRelay;
-import com.example.aircomms.approach.Arrival.ArrivalRelease;
 import com.example.aircomms.approach.Departure.Departure;
 import com.example.aircomms.phonetics.Phonetics;
 
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Date;
 import java.util.List;
 
 public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHolder> {
@@ -206,27 +198,6 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
                         break;
                     case "Airport Code":
                         activityClass = AirportCode.class;
-                        break;
-                    case "Approach Control \nArrival (Relay Estimates to Tower)":
-                        activityClass = ArrivalRelay.class;
-                        break;
-                    case "Approach Control \nArrival (Estimate From ACC)":
-                        activityClass = ArrivalEstimate.class;
-                        break;
-                    case "Approach Control \nArrival (Release message from ACC)":
-                        activityClass = ArrivalRelease.class;
-                        break;
-                    case "Approach Control \nArrival (Initial Contact from Arriving Aircraft)":
-                        activityClass = ArrivalInitial.class;
-                        break;
-                    case "Approach Control \nArrival (Monitoring of Aircraft)":
-                        activityClass = ArrivalMonitoring.class;
-                        break;
-                    case "Approach Control \nArrival (Clearance for Commencement (ILS))":
-                        activityClass = ArrivalClearance.class;
-                        break;
-                    case "Approach Control \nArrival (Coordination of Tower)":
-                        activityClass = ArrivalCoordination.class;
                         break;
                 }
                 Intent intent = new Intent(context, activityClass);

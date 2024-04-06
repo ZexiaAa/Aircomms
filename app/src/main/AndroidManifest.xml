@@ -13,78 +13,19 @@
         android:theme="@style/Theme.Aircomms"
         tools:targetApi="31">
         <activity
+            android:name=".airportCode.Display"
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms"/>
+        <activity
+            android:name=".approach.Examples.DisplayExample"
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms"/>
+        <activity
+            android:name=".approach.PseudoTMA"
+            android:exported="false"
+            android:theme="@style/Theme.Aircomms"/>
+        <activity
             android:name=".ShareApp"
-            android:exported="false"
-            android:theme="@style/Theme.Aircomms">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".approach.SampleFile"
-            android:exported="false"
-            android:theme="@style/Theme.Aircomms">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".approach.SampleSTO"
-            android:exported="false"
-            android:theme="@style/Theme.Aircomms">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".approach.Arrival.ArrivalCoordination"
-            android:exported="false"
-            android:theme="@style/Theme.Aircomms">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".approach.Arrival.ArrivalClearance"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".approach.Arrival.ArrivalMonitoring"
-            android:exported="false"
-            android:theme="@style/Theme.Aircomms">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".approach.Arrival.ArrivalInitial"
-            android:exported="false"
-            android:theme="@style/Theme.Aircomms">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".approach.Arrival.ArrivalRelease"
-            android:exported="false"
-            android:theme="@style/Theme.Aircomms">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".approach.Arrival.ArrivalRelay"
-            android:exported="false"
-            android:theme="@style/Theme.Aircomms">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".approach.Arrival.ArrivalEstimate"
             android:exported="false"
             android:theme="@style/Theme.Aircomms">
             <meta-data
@@ -261,7 +202,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".approach.STO.STO"
+            android:name=".approach.STO.StraightOut"
             android:exported="false"
             android:theme="@style/Theme.Aircomms">
             <meta-data

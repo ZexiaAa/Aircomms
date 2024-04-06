@@ -89,56 +89,6 @@ public class Phonetics extends AppCompatActivity {
 
     }
 
-    private void saveBookmarkItems(List<BookmarkItem> bookmarkItems) {
-        SharedPreferences sharedPref = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        Gson gson = new Gson();
-        String json = gson.toJson(bookmarkItems);
-        editor.putString("bookmarkItems", json);
-        editor.apply();
-    }
-
-    private List<BookmarkItem> loadBookmarkItems() {
-        SharedPreferences sharedPref = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-        Gson gson = new Gson();
-        String json = sharedPref.getString("bookmarkItems", "");
-        Type type = new TypeToken<List<BookmarkItem>>() {}.getType();
-        List<BookmarkItem> bookmarkItems = gson.fromJson(json, type);
-        if (bookmarkItems == null) {
-            bookmarkItems = new ArrayList<>();
-        }
-        return bookmarkItems;
-    
-    }
-
-    public void bookmarkButtonClicked(View view) {
-        // Toggle bookmark state
-        isBookmarked = !isBookmarked;
-
-        // Set bookmark button drawable
-        ImageView bookmarkButton = (ImageView) view;
-        bookmarkButton.setImageResource(isBookmarked ? R.drawable.bookmark_outline : R.drawable.bookmark_filled);
-
-        // Update bookmark state in SharedPreferences
-        SharedPreferences sharedPref = getSharedPreferences("BookmarkState", Context.MODE_PRIVATE);
-        if (isBookmarked) {
-            // Add airport to bookmark list
-            sharedPref.edit().putBoolean("phonetics", true).apply();
-        } else {
-            // Remove airport from bookmark list
-            sharedPref.edit().remove("phonetics").apply();
-        }
-
-        // Show a Toast message to inform the user of the bookmark state
-        String message = isBookmarked ? "Bookmarked!" : "Unbookmarked";
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
-
-
-        // Save bookmark items
-        List<BookmarkItem> bookmarkItems = loadBookmarkItems();
-        saveBookmarkItems(bookmarkItems);
-    }
-
 
     private void search() {
         searchEditText.addTextChangedListener(new TextWatcher() {

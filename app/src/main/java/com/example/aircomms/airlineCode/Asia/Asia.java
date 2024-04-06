@@ -133,7 +133,7 @@ public class Asia extends AppCompatActivity {
 
 
     private void setCharInfo() {
-        itemsAsia.add(new AsiaItem("Air Asia",  "AKM", R.drawable.air_asia ));
+        itemsAsia.add(new AsiaItem("Cool Red",  "APG", R.drawable.air_asia ));
         itemsAsia.add(new AsiaItem("Air China",  "CCA", R.drawable.air_china ));
         itemsAsia.add(new AsiaItem("Air India",  "AIC", R.drawable.air_india ));
         itemsAsia.add(new AsiaItem("Aira Macau",  "AMU", R.drawable.air_macau ));
